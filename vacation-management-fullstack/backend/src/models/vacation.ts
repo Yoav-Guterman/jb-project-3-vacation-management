@@ -32,6 +32,7 @@ export default class Vacation extends Model {
     @Column(DataType.INTEGER)
     price: number
 
+    @AllowNull(true)
     @Column(DataType.STRING(255))
     imageUrl: string
 

@@ -4,8 +4,10 @@ import sequelize from "./db/sequelize"
 import errorLogger from "./middlewares/error/error-logger"
 import errorResponder from "./middlewares/error/error-responder"
 import notFound from "./middlewares/not-found"
-import { extractUserFromToken, requireAuth } from "./middlewares/auth/auth.middleware"
 import cors from 'cors'
+import vacationsRouter from "./routers/vacations"
+import authRouter from "./routers/auth"
+import followsRouter from "./routers/follows"
 
 const port = config.get<string>('app.port')
 const name = config.get<string>('app.name')
@@ -35,7 +37,10 @@ const app = express();
 
     // protected routes - apply requireAuth
     // here is the place to mount routers on the app
-    // app.use('/profile', requireAuth, profileRouter)
+
+    app.use('/auth', authRouter)
+    app.use('/vacations', vacationsRouter)
+    app.use('/follows', followsRouter)
 
 
 
