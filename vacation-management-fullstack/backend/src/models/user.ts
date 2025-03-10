@@ -1,6 +1,5 @@
-import { AllowNull, BelongsToMany, Column, DataType, Default, HasMany, Index, Model, PrimaryKey, Table } from "sequelize-typescript";
-import Post from "./post";
-import Comment from "./comment";
+import { AllowNull, BelongsToMany, Column, DataType, Default, Index, Model, PrimaryKey, Table } from "sequelize-typescript";
+import Vacation from "./vacation";
 import Follow from "./follow";
 
 @Table({
@@ -14,30 +13,32 @@ export default class User extends Model {
     id: string
 
     @AllowNull(false)
-    @Column(DataType.STRING(40))
-    name: string
+    @Column(DataType.STRING(50))
+    firstName: string
+
+    @AllowNull(false)
+    @Column(DataType.STRING(50))
+    lastName: string
 
     @Index({ unique: true })
     @AllowNull(false)
-    @Column(DataType.STRING(40))
-    username: string
+    @Column({
+        type: DataType.STRING(100),
+        validate: {
+            isEmail: true
+        }
+    })
+    email: string
 
     @AllowNull(false)
     @Column(DataType.STRING(64))
     password: string
 
-    @HasMany(() => Post, {
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-    })
-    posts: Post[]
+    @AllowNull(false)
+    @Default('user')
+    @Column(DataType.ENUM('user', 'admin'))
+    role: string
 
-    @HasMany(() => Comment)
-    comment: Comment[]
-
-    @BelongsToMany(() => User, () => Follow, 'followeeId', 'followerId')
-    followers: User[]
-
-    @BelongsToMany(() => User, () => Follow, 'followerId', 'followeeId')
-    following: User[]
+    @BelongsToMany(() => Vacation, () => Follow, 'userId', 'vacationId')
+    followedVacations: Vacation[]
 }

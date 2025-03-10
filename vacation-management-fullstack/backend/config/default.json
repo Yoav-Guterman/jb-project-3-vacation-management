@@ -1,7 +1,7 @@
 {
     "app": {
         "port": "3000",
-        "name": "[app name]",
+        "name": "vacation_management_app",
         "secret": "MySecret",
         "jwtSecret": "myJwtSecret"
     },
@@ -10,7 +10,7 @@
         "port": 3306,
         "username": "root",
         "password": "",
-        "database": "[put name of database here]"
+        "database": "vacation_management"
     },
     "sequelize": {
         "logging": true,
