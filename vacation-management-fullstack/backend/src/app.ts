@@ -8,6 +8,8 @@ import cors from 'cors'
 import vacationsRouter from "./routers/vacations"
 import authRouter from "./routers/auth"
 import followsRouter from "./routers/follows"
+import fileUpload from "express-fileupload"
+import { createAppBucketIfNotExist } from "./aws/aws"
 
 const port = config.get<string>('app.port')
 const name = config.get<string>('app.name')
@@ -18,6 +20,8 @@ const app = express();
 (async () => {
     await sequelize.sync({ force })
 
+    await createAppBucketIfNotExist();
+
     // basic middleware
     app.use(cors()) // allow any client to use this server
     // app.use(cors({
@@ -25,6 +29,7 @@ const app = express();
     // })) // allow this specific clients
 
     app.use(json()) // a middleware to extract the post data and save it to the request object in case the content type of the request is application/json
+    app.use(fileUpload())
 
     // Apply token extraction to ALL routes
     // This middleware will try to get the user from JWT if present

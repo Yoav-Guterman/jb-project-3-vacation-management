@@ -17,18 +17,17 @@ export async function getAllVacations(req: Request, res: Response, next: NextFun
     }
 }
 
-export async function createVacation(req: Request<{}, {}, { destination: string, description: string, startDate: Date, endDate: Date, price: number }>, res: Response, next: NextFunction) {
+export async function createVacation(req: Request<{}, {}, { destination: string, description: string, startDate: Date, endDate: Date, price: number, imageUrl?: string }>, res: Response, next: NextFunction) {
     try {
 
-        const { destination, description, startDate, endDate, price } = req.body
+        let createParams = { ...req.body }
 
-        const newVacation = await Vacation.create({
-            destination,
-            description,
-            startDate,
-            endDate,
-            price
-        })
+        if (req.imageUrl) {
+            const { imageUrl } = req
+            createParams = { ...createParams, imageUrl }
+        }
+
+        const newVacation = await Vacation.create(createParams)
         res.json(newVacation);
 
     } catch (e) {

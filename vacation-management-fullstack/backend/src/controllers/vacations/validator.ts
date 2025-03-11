@@ -8,6 +8,12 @@ export const VacationValidator = Joi.object({
     description: Joi.string().min(6).required()
 })
 
+export const newVacationFilesValidator = Joi.object({
+    vacationImage: Joi.object({
+        mimetype: Joi.string().valid('image/png', 'image/jpg', 'image/jpeg')
+    }).unknown(true).optional()
+})
+
 export const vacationIdValidator = Joi.object({
     id: Joi.string().uuid().required()
 })
