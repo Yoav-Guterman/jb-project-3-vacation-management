@@ -1,6 +1,6 @@
 import axios from "axios"
 import Login from "../models/user/Login"
-import SignUp from "../models/user/signUp"
+import Signup from "../models/user/Signup"
 
 class Auth {
     async login(login: Login): Promise<string> {
@@ -8,7 +8,7 @@ class Auth {
         return response.data.jwt
     }
 
-    async signUp(signUp: SignUp): Promise<string> {
+    async signUp(signUp: Signup): Promise<string> {
         const response = await axios.post<{ jwt: string }>(`${import.meta.env.VITE_REST_SERVER_URL}/auth/signup`, signUp)
         return response.data.jwt
     }
