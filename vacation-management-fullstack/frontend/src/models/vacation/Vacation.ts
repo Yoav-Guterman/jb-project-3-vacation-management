@@ -1,5 +1,6 @@
-import VacationDraft from "./VacationDraft";
+import BaseVacation from "./BaseVacation";
 
-export default interface Vacation extends VacationDraft {
-    id: string
+export default interface Vacation extends BaseVacation {
+    id: string,
+    imageUrl: string,
 }

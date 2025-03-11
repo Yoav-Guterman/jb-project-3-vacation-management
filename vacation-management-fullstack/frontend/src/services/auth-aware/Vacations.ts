@@ -2,7 +2,7 @@ import Vacation from "../../models/vacation/Vacation";
 import VacationDraft from "../../models/vacation/VacationDraft";
 import AuthAware from "./AuthAware";
 
-export default class Profile extends AuthAware {
+export default class VacationsService extends AuthAware {
     async getAllVacations(): Promise<Vacation[]> {
         const response = await this.axiosInstance.get<Vacation[]>(`${import.meta.env.VITE_REST_SERVER_URL}/vacations`)
         return response.data

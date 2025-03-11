@@ -1,12 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Profile from "../../posts/profile/Profile";
-import Feed from "../../posts/feed/Feed";
 import NotFound from "../not-found/NotFound";
-import EditPost from "../../posts/edit/EditPosts";
 import SignUp from "../../auth/sign-up/SignUp";
 import { useContext } from "react";
 import { AuthContext } from "../../auth/auth/Auth";
 import Login from "../../auth/login/Login";
+import Vacations from "../../vacations/vacations/Vacations";
 
 
 
@@ -20,24 +18,19 @@ export default function Routing(): JSX.Element {
             {/* Public routes - always accessible */}
             <Route path="/login" element={
                 // If already logged in, redirect to profile
-                isLoggedIn ? <Navigate to="/profile" /> : <Login />
+                isLoggedIn ? <Navigate to="/vacations" /> : <Login />
             } />
             <Route path="/signUp" element={
-                isLoggedIn ? <Navigate to="/profile" /> : <SignUp />
+                isLoggedIn ? <Navigate to="/vacations" /> : <SignUp />
             } />
 
             {/* Protected routes - only accessible when logged in */}
             <Route path="/" element={
-                isLoggedIn ? <Navigate to="/profile" /> : <Navigate to="/login" />
+                isLoggedIn ? <Navigate to="/vacations" /> : <Navigate to="/login" />
             } />
-            <Route path="/profile" element={
-                isLoggedIn ? <Profile /> : <Navigate to="/login" />
-            } />
-            <Route path="/feed" element={
-                isLoggedIn ? <Feed /> : <Navigate to="/login" />
-            } />
-            <Route path="/edit/:id" element={
-                isLoggedIn ? <EditPost /> : <Navigate to="/login" />
+
+            <Route path="/vacations" element={
+                isLoggedIn ? <Vacations /> : <Navigate to="/login" />
             } />
 
             {/* Catch-all route */}
