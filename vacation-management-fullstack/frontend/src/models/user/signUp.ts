@@ -1,5 +1,6 @@
-export default interface SignUp {
-    name: string,
-    username: string,
-    password: string
+import Login from "./Login";
+
+export default interface Signup extends Login {
+    firstName: string,
+    lastName: string
 }

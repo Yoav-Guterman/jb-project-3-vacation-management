@@ -1,8 +1,6 @@
-import Login from "./Login";
+import Signup from "./Signup";
 
-export default interface User extends Login {
+export default interface User extends Signup {
     id: string,
-    name: string,
-    createAt: string,
-    updatedAt: string
+    role: string
 }
