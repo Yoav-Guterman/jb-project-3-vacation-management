@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom'
 import './Header.css'
-import useUsername from '../../../hooks/useUsername'
 import { useContext } from 'react'
 import { AuthContext } from '../../auth/auth/Auth'
+import useUsername from '../../../hooks/useUsername'
 
 export default function Header() {
 
     const name = useUsername()
 
-    const { logOut } = useContext(AuthContext)!
+    const { logOut, role } = useContext(AuthContext)!
 
     function logMeOut() {
         logOut()
@@ -22,13 +22,12 @@ export default function Header() {
 
             <div>
                 <nav>
-                    <NavLink to="/profile">profile</NavLink>
+                    <NavLink to="/vacations">vacations</NavLink>
                     <NavLink to="/feed">feed</NavLink>
-                    {/* <NavLink to="/search">search</NavLink> */}
                 </nav>
             </div>
             <div>
-                Hello {name} | <button onClick={logMeOut}>logout</button>
+                Hello {name} {role} | <button onClick={logMeOut}>logout</button>
             </div>
         </div>
     )

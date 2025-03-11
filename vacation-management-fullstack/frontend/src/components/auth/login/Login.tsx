@@ -33,7 +33,7 @@ export default function Login(): JSX.Element {
                 <button>Login</button>
             </form>
 
-            <h6>dont have an account? sign in here</h6>
+            <h6>don't have an account? sign in here</h6>
             <button
                 onClick={goToSignup}
                 className="btn btn-link">

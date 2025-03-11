@@ -28,7 +28,7 @@ export async function login(req: Request<{}, {}, { email: string, password: stri
                 'wrong credentials'
             ))
 
-        const jwt = sign(user.get({ plain: true }), config.get<string>('app.jwtSecret'))
+        const jwt = sign(user.get({ plain: true }), config.get<string>('app.jwtSecret'), { expiresIn: '24h' })
         res.json({ jwt })
     } catch (e) {
         next(e)
@@ -47,7 +47,7 @@ export async function signUp(req: Request<{}, {}, { firstName: string, email: st
             email
         })
 
-        const jwt = sign(user.get({ plain: true }), config.get<string>('app.jwtSecret'))
+        const jwt = sign(user.get({ plain: true }), config.get<string>('app.jwtSecret'), { expiresIn: '24h' })
         res.json({ jwt })
 
     } catch (e) {
