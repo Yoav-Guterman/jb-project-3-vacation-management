@@ -35,6 +35,43 @@ export async function createVacation(req: Request<{}, {}, { destination: string,
     }
 }
 
+export async function updateVacation(req: Request<{ id: string }, {}, {
+    destination: string,
+    description: string,
+    startDate: Date,
+    endDate: Date,
+    price: number,
+    imageUrl?: string
+}>, res: Response, next: NextFunction) {
+    try {
+        let createParams = { ...req.body }
+
+        if (req.imageUrl) {
+            const { imageUrl } = req
+            createParams = { ...createParams, imageUrl }
+        }
+
+        const updatedVacation = await Vacation.findByPk(req.params.id)
+
+        if (!updatedVacation) return next(new AppError(StatusCodes.NOT_FOUND, 'the vacation you were trying to update does not exist'))
+
+        const { price, endDate, startDate, description, destination, imageUrl } = createParams
+
+        updatedVacation.price = price
+        updatedVacation.endDate = endDate
+        updatedVacation.startDate = startDate
+        updatedVacation.description = description
+        updatedVacation.destination = destination
+        updatedVacation.imageUrl = imageUrl
+
+        await updatedVacation.save() // <= this command generates the actual SQL UPDATE
+        res.json(updatedVacation)
+
+    } catch (e) {
+        next(e)
+    }
+}
+
 export async function removeVacation(req: Request<{ id: string }>, res: Response, next: NextFunction) {
     try {
 
@@ -51,33 +88,5 @@ export async function removeVacation(req: Request<{ id: string }>, res: Response
         })
     } catch (e) {
         next(e);
-    }
-}
-
-export async function updateVacation(req: Request<{ id: string }, {}, {
-    destination: string,
-    description: string,
-    startDate: Date,
-    endDate: Date,
-    price: number
-}>, res: Response, next: NextFunction) {
-    try {
-        const vacation = await Vacation.findByPk(req.params.id)
-
-        if (!vacation) return next(new AppError(StatusCodes.NOT_FOUND, 'the vacation you were trying to update does not exist'))
-
-        const { price, endDate, startDate, description, destination } = req.body
-
-        vacation.price = price
-        vacation.endDate = endDate
-        vacation.startDate = startDate
-        vacation.description = description
-        vacation.destination = destination
-
-        await vacation.save() // <= this command generates the actual SQL UPDATE
-        res.json(vacation)
-
-    } catch (e) {
-        next(e)
     }
 }

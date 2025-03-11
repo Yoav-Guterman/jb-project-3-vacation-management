@@ -14,6 +14,7 @@ vacationsRouter.use(enforceAuth)
 vacationsRouter.get('/', getAllVacations)
 vacationsRouter.post('/', validation(VacationValidator), filesValidation(newVacationFilesValidator), fileUploader, createVacation)
 vacationsRouter.delete('/:id', paramsValidation(vacationIdValidator), removeVacation)
-vacationsRouter.patch('/:id', paramsValidation(vacationIdValidator), validation(VacationValidator), updateVacation)
+vacationsRouter.patch('/:id', paramsValidation(vacationIdValidator), validation(VacationValidator), filesValidation(newVacationFilesValidator), fileUploader, updateVacation)
 // maybe add the file validator to patch
-export default vacationsRouter
+
+export default vacationsRouter 
