@@ -5,6 +5,8 @@ import VacationDraft from '../../../models/vacation/VacationDraft'
 import VacationsService from '../../../services/auth-aware/Vacations'
 import useService from '../../../hooks/useService'
 import { useNavigate } from 'react-router-dom'
+import { useAppDispatch } from '../../../redux/hooks'
+import { newVacation } from '../../../redux/vacationsSlice'
 
 export default function AddVacation(): JSX.Element {
     // Set up form handling with react-hook-form
@@ -18,6 +20,7 @@ export default function AddVacation(): JSX.Element {
 
     // Navigation for redirecting after successful submission
     const navigate = useNavigate()
+    const dispatch = useAppDispatch()
 
     // Get the vacations service for API calls
     const vacationsService = useService(VacationsService)
@@ -36,7 +39,8 @@ export default function AddVacation(): JSX.Element {
             }
 
             // Send the data to the server
-            await vacationsService.create(draft)
+            const newVacationFromServer = await vacationsService.create(draft)
+            dispatch(newVacation(newVacationFromServer))
 
             // Reset the form and preview image
             reset()

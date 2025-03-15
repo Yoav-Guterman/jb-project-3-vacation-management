@@ -2,6 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import VacationModel from '../../../models/vacation/Vacation';
 import './Vacation.css';
 import { useState } from 'react';
+import { useAppDispatch } from '../../../redux/hooks';
+import useService from '../../../hooks/useService';
+import VacationsService from '../../../services/auth-aware/Vacations';
+import { remove } from '../../../redux/vacationsSlice';
 
 interface VacationProps {
     vacation: VacationModel;
@@ -9,7 +13,10 @@ interface VacationProps {
 }
 
 export default function Vacation({ vacation, isAdmin }: VacationProps) {
+
     const navigate = useNavigate();
+    const dispatch = useAppDispatch()
+    const vacationsService = useService(VacationsService)
 
     const {
         id,
@@ -21,15 +28,20 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
         imageUrl
     } = vacation;
 
-    function handleEdit() {
+    function editMe() {
         navigate(`/admin/edit-vacation/${id}`);
     }
 
-    function handleDelete() {
-        if (window.confirm('Are you sure you want to delete this vacation?')) {
-            // Call your delete API here
-            console.log(`Delete vacation ${id}`);
+    async function deleteMe() {
+        try {
+            if (confirm(`Are you sure you want to delete this vacation to ${destination}?`)) {
+                await vacationsService.remove(id)
+                dispatch(remove({ id }))
+            }
+        } catch (e) {
+            alert(e)
         }
+
     }
 
     // Keep track of image loading errors
@@ -77,8 +89,8 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
             {/* Admin controls - only shown to admins */}
             {isAdmin && (
                 <div className="vacation-actions">
-                    <button onClick={handleEdit}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button onClick={editMe}>Edit</button>
+                    <button onClick={deleteMe}>Delete</button>
                 </div>
             )}
         </div>

@@ -1,15 +1,16 @@
 import { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Vacations.css'
-import VacationModel from '../../../models/vacation/Vacation'
 import VacationsService from '../../../services/auth-aware/Vacations'
 import useService from '../../../hooks/useService'
 import Vacation from '../vacation/Vacation'
 import { AuthContext } from '../../auth/auth/Auth'
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
+import { init } from '../../../redux/vacationsSlice'
 
 export default function Vacations() {
     // State to store the vacations
-    const [vacations, setVacations] = useState<VacationModel[]>([])
+    // const [vacations, setVacations] = useState<VacationModel[]>([])
     // State to track loading status
     const [isLoading, setIsLoading] = useState<boolean>(true)
     // State to track any fetch errors
@@ -17,6 +18,10 @@ export default function Vacations() {
 
     // Get the vacation service
     const vacationService = useService(VacationsService)
+
+    const vacations = useAppSelector(state => state.vacations.vacations)
+    const dispatch = useAppDispatch()
+
 
     // Get authentication context to check role
     const { role } = useContext(AuthContext)!
@@ -30,11 +35,11 @@ export default function Vacations() {
                 setIsLoading(true)
                 setError(null)
 
-                // Fetch vacations from the service
-                const allVacationsFromService = await vacationService.getAllVacations()
+                if (vacations.length === 0) {
+                    const allVacationsFromService = await vacationService.getAllVacations()
+                    dispatch(init(allVacationsFromService))
+                }
 
-                // Update state with the fetched vacations
-                setVacations(allVacationsFromService)
             } catch (e) {
                 // Handle errors properly
                 console.error('Error fetching vacations:', e)

@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from "express";
 import Vacation from "../../models/vacation";
-import Follow from "../../models/follow";
 import User from "../../models/user";
 import AppError from "../../errors/app-error";
 import { StatusCodes } from "http-status-codes";
