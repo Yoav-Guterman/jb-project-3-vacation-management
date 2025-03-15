@@ -1,17 +1,17 @@
-import { useContext } from 'react'
-import Footer from '../footer/Footer'
-import Header from '../header/Header'
-import Routing from '../routing/Routing'
-import './Layout.css'
-import { AuthContext } from '../../auth/auth/Auth'
+// src/components/layout/layout/Layout.tsx
+import { useContext } from 'react';
+import { AuthContext } from '../../auth/auth/Auth';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+import Routing from '../routing/Routing';
+import './Layout.css';
 
 export default function Layout() {
-    const { jwt } = useContext(AuthContext)!
-    const isLoggedIn = !!jwt
+    const { isAuthenticated } = useContext(AuthContext)!;
 
     return (
         <div className='Layout'>
-            {isLoggedIn ? (
+            {isAuthenticated ? (
                 <>
                     <header>
                         <Header />
@@ -29,5 +29,5 @@ export default function Layout() {
                 </div>
             )}
         </div>
-    )
+    );
 }

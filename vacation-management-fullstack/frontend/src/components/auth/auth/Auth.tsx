@@ -7,7 +7,7 @@ import User from '../../../models/user/User';
 // Define what the AuthContext will provide to components
 interface AuthContextInterface {
     jwt: string;
-    isAuthenticated: boolean; // Clear flag for authentication status
+    isAuthenticated: boolean;
     role: string;
     newLogin(jwt: string): void;
     logOut(): void;

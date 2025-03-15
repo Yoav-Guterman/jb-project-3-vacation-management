@@ -1,0 +1,225 @@
+import { useForm } from 'react-hook-form'
+import './AddVacation.css'
+import { ChangeEvent, useState } from 'react'
+import VacationDraft from '../../../models/vacation/VacationDraft'
+import VacationsService from '../../../services/auth-aware/Vacations'
+import useService from '../../../hooks/useService'
+import { useNavigate } from 'react-router-dom'
+
+export default function AddVacation(): JSX.Element {
+    // Set up form handling with react-hook-form
+    const { register, handleSubmit, reset, formState, getValues } = useForm<VacationDraft>()
+
+    // State for image preview
+    const [previewImageSrc, setPreviewImageSrc] = useState<string>('')
+
+    // State to track submission status
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+
+    // Navigation for redirecting after successful submission
+    const navigate = useNavigate()
+
+    // Get the vacations service for API calls
+    const vacationsService = useService(VacationsService)
+
+    // get today's value so we can use it in the min for the can't select past dates
+    const today = new Date().toISOString().split('T')[0];
+
+    // Handle form submission
+    async function submit(draft: VacationDraft) {
+        try {
+            setIsSubmitting(true)
+
+            // Convert FileList to File object if an image was uploaded
+            if (draft.vacationImage) {
+                draft.vacationImage = (draft.vacationImage as unknown as FileList)[0]
+            }
+
+            // Send the data to the server
+            await vacationsService.create(draft)
+
+            // Reset the form and preview image
+            reset()
+            setPreviewImageSrc('')
+
+            // Redirect to the vacations list page
+            navigate('/vacations')
+        } catch (error) {
+            console.error('Error creating vacation:', error)
+            alert('Failed to create vacation. Please try again.')
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
+
+    // Preview the image when selected
+    function previewImage(event: ChangeEvent<HTMLInputElement>) {
+        const file = event.currentTarget.files && event.currentTarget.files[0]
+        if (file) {
+            const imageSource = URL.createObjectURL(file)
+            setPreviewImageSrc(imageSource)
+        }
+    }
+
+    return (
+        <div className='AddVacation'>
+            <h2>Add Vacation</h2>
+            <form onSubmit={handleSubmit(submit)}>
+                <div className="form-group">
+                    <label htmlFor="destination">Destination</label>
+                    <input
+                        id="destination"
+                        placeholder='Enter destination'
+                        {...register('destination', {
+                            required: {
+                                value: true,
+                                message: 'Destination is required'
+                            },
+                            minLength: {
+                                value: 3,
+                                message: 'Destination must be at least 3 characters'
+                            },
+                            maxLength: {
+                                value: 50,
+                                message: 'Destination must be less than 50 characters'
+                            }
+                        })}
+                    />
+                    {formState.errors.destination && (
+                        <span className='error'>{formState.errors.destination.message}</span>
+                    )}
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="description">Description</label>
+                    <textarea
+                        id="description"
+                        placeholder='Enter vacation description'
+                        {...register('description', {
+                            required: {
+                                value: true,
+                                message: 'Description is required'
+                            },
+                            minLength: {
+                                value: 10,
+                                message: 'Description must be at least 10 characters'
+                            },
+                        })}
+                    />
+                    {formState.errors.description && (
+                        <span className='error'>{formState.errors.description.message}</span>
+                    )}
+                </div>
+
+                <div className="form-row">
+                    <div className="form-group">
+                        <label htmlFor="startDate">Start Date</label>
+                        <input
+                            id="startDate"
+                            type="date"
+                            min={today}
+                            {...register('startDate', {
+                                required: {
+                                    value: true,
+                                    message: 'Start date is required'
+                                },
+                                validate: value => {
+                                    // value is something like "2025-03-20" from the date input
+                                    const valueAsString = new Date(value).toISOString().split('T')[0];
+                                    // This compares "2025-03-20" >= "2025-03-15"
+                                    return valueAsString >= today || 'Cannot select dates in the past';
+                                }
+                            })}
+                        />
+                        {formState.errors.startDate && (
+                            <span className='error'>{formState.errors.startDate.message}</span>
+                        )}
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="endDate">End Date</label>
+                        <input
+                            id="endDate"
+                            type="date"
+                            {...register('endDate', {
+                                required: {
+                                    value: true,
+                                    message: 'End date is required'
+                                },
+                                validate: value => {
+                                    const startDate = new Date(getValues().startDate);
+                                    const endDate = new Date(value);
+                                    return endDate > startDate || 'End date must be after start date';
+                                }
+                            })}
+                        />
+                        {formState.errors.endDate && (
+                            <span className='error'>{formState.errors.endDate.message}</span>
+                        )}
+                    </div>
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="price">Price</label>
+                    <input
+                        id="price"
+                        type="number"
+                        placeholder="$"
+                        {...register('price', {
+                            required: {
+                                value: true,
+                                message: 'Price is required'
+                            },
+                            min: {
+                                value: 0,
+                                message: 'Price must be positive'
+                            },
+                            max: {
+                                value: 10000,
+                                message: 'Price cannot exceed 10,000'
+                            }
+                        })}
+                    />
+                    {formState.errors.price && (
+                        <span className='error'>{formState.errors.price.message}</span>
+                    )}
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="vacationImage">Cover Image</label>
+                    <input
+                        id="vacationImage"
+                        type="file"
+                        accept='image/png, image/jpeg, image/jpg, image/webp'
+                        {...register('vacationImage')}
+                        onChange={previewImage}
+                    />
+
+                    {previewImageSrc && (
+                        <div className="image-preview">
+                            <img src={previewImageSrc} alt="Preview" />
+                        </div>
+                    )}
+                </div>
+
+                <div className="form-actions">
+                    <button
+                        type="button"
+                        onClick={() => navigate('/vacations')}
+                        className="btn-cancel"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="btn-submit"
+                    >
+                        {isSubmitting ? 'Adding Vacation...' : 'Add Vacation'}
+                    </button>
+                </div>
+            </form>
+        </div>
+    )
+}
