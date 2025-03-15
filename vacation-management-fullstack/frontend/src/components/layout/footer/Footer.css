@@ -1,11 +1,8 @@
 .Footer {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    width: 100%;
 }
 
 .Footer p {
-    margin: 0;
-    padding: 10px;
+    color: #6c757d;
+    font-size: 0.9rem;
 }

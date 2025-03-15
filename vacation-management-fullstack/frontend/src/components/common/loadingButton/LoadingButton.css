@@ -2,17 +2,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    /* Space between message and loading icon */
-    padding: 6px 12px;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    gap: 10px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
     border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    width: auto;
+    cursor: not-allowed;
 }
 
-/* Ensure the loading icon container doesn't take extra space */
 .LoadingButton .Loading {
-    display: inline-flex;
-    height: auto;
-    width: auto;
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .LoadingButton {
+        width: 100%;
+    }
 }

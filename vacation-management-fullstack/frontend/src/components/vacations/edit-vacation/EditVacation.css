@@ -1,0 +1,133 @@
+.EditVacation {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.EditVacation h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.EditVacation .form-group {
+    margin-bottom: 20px;
+}
+
+.EditVacation .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #666;
+}
+
+.EditVacation .form-group input,
+.EditVacation .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.EditVacation .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.EditVacation .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.EditVacation .error {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.EditVacation .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.EditVacation .btn-cancel {
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.EditVacation .btn-cancel:hover {
+    background-color: #e9ecef;
+}
+
+.EditVacation .btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.EditVacation .btn-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+.EditVacation .btn-submit:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.EditVacation .image-preview {
+    margin: 15px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.EditVacation .image-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .EditVacation {
+        padding: 20px;
+        margin: 20px auto;
+        width: 95%;
+    }
+
+    .EditVacation .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .EditVacation .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .EditVacation .btn-cancel,
+    .EditVacation .btn-submit {
+        width: 100%;
+    }
+}

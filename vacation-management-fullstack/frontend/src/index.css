@@ -1,8 +1,82 @@
-html,
-body,
-#root {
+/* Global Styles */
+:root {
+  --primary-color: #0095e8;
+  --primary-hover: #0077b8;
+  --secondary-color: #f8f9fa;
+  --text-color: #333;
+  --border-color: #dee2e6;
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-size: 20px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Loading and Error States */
+.loading-container,
+.error-container,
+.empty-container {
+  text-align: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  margin: 20px 0;
+}
+
+.error-container p {
+  color: var(--error-color);
+  margin-bottom: 15px;
+}
+
+.error-container button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.error-container button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Mobile Responsiveness Base */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
 }

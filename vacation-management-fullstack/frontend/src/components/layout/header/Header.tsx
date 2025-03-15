@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom'
 import './Header.css'
 import { useContext } from 'react'
 import { AuthContext } from '../../auth/auth/Auth'
@@ -8,7 +7,7 @@ export default function Header() {
 
     const name = useUsername()
 
-    const { logOut, role } = useContext(AuthContext)!
+    const { logOut } = useContext(AuthContext)!
 
     function logMeOut() {
         logOut()
@@ -19,15 +18,8 @@ export default function Header() {
             <div>
                 Logo
             </div>
-
             <div>
-                <nav>
-                    <NavLink to="/vacations">vacations</NavLink>
-                    <NavLink to="/feed">feed</NavLink>
-                </nav>
-            </div>
-            <div>
-                Hello {name} {role} | <button onClick={logMeOut}>logout</button>
+                Hello {name} | <button onClick={logMeOut}>logout</button>
             </div>
         </div>
     )

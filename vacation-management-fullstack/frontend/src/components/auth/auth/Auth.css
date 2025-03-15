@@ -1,0 +1,80 @@
+/* Common Auth Form Styles */
+.Login,
+.SignUp {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.Login h2,
+.SignUp h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.Login form,
+.SignUp form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Login input,
+.SignUp input {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.Login button,
+.SignUp button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.Login button:hover,
+.SignUp button:hover {
+    background-color: var(--primary-hover);
+}
+
+.Login h6,
+.SignUp h6 {
+    text-align: center;
+    margin: 20px 0 10px;
+    font-weight: normal;
+    color: #6c757d;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 16px;
+    text-decoration: underline;
+    margin: 0 auto;
+    display: block;
+    padding: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    .Login,
+    .SignUp {
+        margin: 30px auto;
+        padding: 20px;
+        width: 90%;
+    }
+}
