@@ -1,7 +1,7 @@
 export default interface BaseVacation {
     destination: string,
     description: string,
-    startDate: Date,
-    endDate: Date,
+    startDate: Date | string,
+    endDate: Date | string,
     price: number,
 }

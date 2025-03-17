@@ -57,7 +57,7 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
                         src={imageUrl}
                         alt={destination}
                         // Add these properties to improve image loading
-                        loading="lazy"
+                        // loading="lazy"
                         onError={(e) => {
                             console.error(`Failed to load image: ${imageUrl}`);
                             // Prevent infinite error loops

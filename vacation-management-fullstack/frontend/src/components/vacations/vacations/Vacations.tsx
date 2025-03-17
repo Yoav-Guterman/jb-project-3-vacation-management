@@ -27,12 +27,12 @@ export default function Vacations() {
     const { role } = useContext(AuthContext)!
     const isAdmin = role === 'admin'
 
+
     // Fixed useEffect with proper dependency array
     useEffect(() => {
         // Create an async function to fetch vacations
         (async () => {
             try {
-                setIsLoading(true)
                 setError(null)
 
                 if (vacations.length === 0) {

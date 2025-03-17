@@ -36,17 +36,20 @@ export default function EditVacation(): JSX.Element {
     // Get the dispatch function for Redux
     const dispatch = useAppDispatch()
 
+
+
     // Load vacation data into the form
     useEffect(() => {
         if (vacation) {
             // Format dates for the date inputs (YYYY-MM-DD format)
+
             reset({
                 destination: vacation.destination,
                 description: vacation.description,
-                startDate: vacation.startDate,
-                endDate: vacation.endDate,
+                startDate: new Date(vacation.startDate).toISOString().split('T')[0],
+                endDate: new Date(vacation.endDate).toISOString().split('T')[0],
                 price: vacation.price
-            })
+            });
 
             // Set image preview if available
             if (vacation.imageUrl) {

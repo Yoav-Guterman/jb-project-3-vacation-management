@@ -195,7 +195,7 @@ export default function AddVacation(): JSX.Element {
                         id="vacationImage"
                         type="file"
                         accept='image/png, image/jpeg, image/jpg, image/webp'
-                        {...register('vacationImage')}
+                        {...register('vacationImage',)}
                         onChange={previewImage}
                     />
 

@@ -61,7 +61,10 @@ export async function updateVacation(req: Request<{ id: string }, {}, {
         updatedVacation.startDate = startDate
         updatedVacation.description = description
         updatedVacation.destination = destination
-        updatedVacation.imageUrl = imageUrl
+
+        if (imageUrl) {
+            updatedVacation.imageUrl = imageUrl
+        }
 
         await updatedVacation.save() // <= this command generates the actual SQL UPDATE
         res.json(updatedVacation)

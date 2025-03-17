@@ -10,8 +10,17 @@ import EditVacation from '../../vacations/edit-vacation/EditVacation';
 import NotFound from '../not-found/NotFound';
 
 export default function Routing() {
-    const { isAuthenticated, role } = useContext(AuthContext)!;
+    const { isAuthenticated, role, isLoading } = useContext(AuthContext)!;
     const isAdmin = role === 'admin';
+
+    // Show loading indicator while authentication state is loading
+    if (isLoading) {
+        return (
+            <div className="loading-container">
+                <p>Loading...</p>
+            </div>
+        );
+    }
 
     return (
         <Routes>

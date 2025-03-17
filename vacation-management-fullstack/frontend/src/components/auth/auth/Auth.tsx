@@ -9,6 +9,7 @@ interface AuthContextInterface {
     jwt: string;
     isAuthenticated: boolean;
     role: string;
+    isLoading: boolean; // Added isLoading state
     newLogin(jwt: string): void;
     logOut(): void;
 }
@@ -25,52 +26,40 @@ export default function Auth(props: PropsWithChildren): JSX.Element {
     const [jwt, setJwt] = useState<string>(localStorage.getItem(JWT_KEY_NAME) || '');
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
     const [role, setRole] = useState<string>('');
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
-    // Validate token whenever JWT changes
     useEffect(() => {
         // No token means not authenticated
-        if (!jwt) {
-            setIsAuthenticated(false);
-            setRole('');
-            return;
-        }
-
-        try {
-            // Decode the token
-            const decoded = jwtDecode<User>(jwt);
-
-            // Check if token is expired
-            const currentTime = Date.now() / 1000;
-            if (decoded.exp && decoded.exp < currentTime) {
-                // Token expired - log out the user
-                console.log("Token expired, logging out...");
+        if (jwt) {
+            try {
+                // Decode the token
+                const decoded = jwtDecode<User>(jwt);
+                setIsAuthenticated(true);
+                setRole(decoded.role);
+            } catch (error) {
+                console.error("Invalid token:", error);
                 logOut();
-                return;
             }
-
-            // Valid token - set authentication state
-            setIsAuthenticated(true);
-            setRole(decoded.role || '');
-        } catch (error) {
-            // Invalid token - log out the user
-            console.error("Invalid token:", error);
-            logOut();
         }
-    }, [jwt]); // Only run when jwt changes
+        setIsLoading(false);
+    }, [jwt]);
 
     // Login function
     function newLogin(newJwt: string) {
+        setIsLoading(true); // Done loading
         localStorage.setItem(JWT_KEY_NAME, newJwt);
         setJwt(newJwt);
-        // The useEffect above will handle validation and setting isAuthenticated/role
+        setIsLoading(false); // Done loading
     }
 
     // Logout function
     function logOut() {
+        setIsLoading(true)
         localStorage.removeItem(JWT_KEY_NAME);
         setJwt('');
         setIsAuthenticated(false);
         setRole('');
+        setIsLoading(false); // Done loading
     }
 
     // Provide auth context to all children components
@@ -79,6 +68,7 @@ export default function Auth(props: PropsWithChildren): JSX.Element {
             jwt,
             isAuthenticated,
             role,
+            isLoading, // Add isLoading to the context
             newLogin,
             logOut
         }}>
