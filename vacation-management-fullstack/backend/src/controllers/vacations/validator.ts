@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-export const VacationValidator = Joi.object({
+export const newVacationValidator = Joi.object({
     destination: Joi.string().min(3).max(50).required(),
     description: Joi.string().min(10).required(),
     startDate: Joi.date().min('now').required()
@@ -29,6 +29,12 @@ export const UpdateVacationValidator = Joi.object({
 });
 
 export const newVacationFilesValidator = Joi.object({
+    vacationImage: Joi.object({
+        mimetype: Joi.string().valid('image/png', 'image/jpg', 'image/jpeg', 'image/webp')
+    }).unknown(true).required()
+})
+
+export const updateVacationFilesValidator = Joi.object({
     vacationImage: Joi.object({
         mimetype: Joi.string().valid('image/png', 'image/jpg', 'image/jpeg', 'image/webp')
     }).unknown(true).optional()

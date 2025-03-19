@@ -194,10 +194,19 @@ export default function AddVacation(): JSX.Element {
                     <input
                         id="vacationImage"
                         type="file"
+
                         accept='image/png, image/jpeg, image/jpg, image/webp'
-                        {...register('vacationImage',)}
+                        {...register('vacationImage', {
+                            required: {
+                                value: true,
+                                message: 'Vacation image is required'
+                            }
+                        })}
                         onChange={previewImage}
                     />
+                    {formState.errors.vacationImage && (
+                        <span className='error'>{formState.errors.vacationImage.message}</span>
+                    )}
 
                     {previewImageSrc && (
                         <div className="image-preview">
