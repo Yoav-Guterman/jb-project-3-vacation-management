@@ -2,13 +2,13 @@
 import { useNavigate } from 'react-router-dom';
 import VacationModel from '../../../models/vacation/Vacation';
 import './Vacation.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useAppDispatch } from '../../../redux/hooks';
 import useService from '../../../hooks/useService';
 import VacationsService from '../../../services/auth-aware/Vacations';
 import { remove, followVacation, unfollowVacation } from '../../../redux/vacationsSlice';
-import useUser from '../../../hooks/useUser';
 import FollowService from '../../../services/auth-aware/Follows';
+import { AuthContext } from '../../auth/auth/Auth';
 
 interface VacationProps {
     vacation: VacationModel;
@@ -22,7 +22,7 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
     const followService = useService(FollowService);
 
     // Get user info from our custom hook
-    const user = useUser();
+    const { user } = useContext(AuthContext)!
 
     const {
         id,

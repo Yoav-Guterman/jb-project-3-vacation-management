@@ -1,13 +1,10 @@
 import './Header.css'
 import { useContext } from 'react'
 import { AuthContext } from '../../auth/auth/Auth'
-import useUsername from '../../../hooks/useUsername'
 
 export default function Header() {
 
-    const name = useUsername()
-
-    const { logOut } = useContext(AuthContext)!
+    const { logOut, user } = useContext(AuthContext)!
 
     function logMeOut() {
         logOut()
@@ -19,7 +16,7 @@ export default function Header() {
                 Logo
             </div>
             <div>
-                Hello {name} | <button onClick={logMeOut}>logout</button>
+                Hello {user?.firstName} | <button onClick={logMeOut}>logout</button>
             </div>
         </div>
     )

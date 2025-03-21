@@ -20,8 +20,8 @@ export default function Vacations() {
     const dispatch = useAppDispatch()
 
     // Get user role
-    const { role } = useContext(AuthContext)!
-    const isAdmin = role === 'admin'
+    const { user } = useContext(AuthContext)!
+    const isAdmin = user?.role === 'admin'
 
     // Calculate pagination
     const totalPages = Math.ceil(vacations.length / itemsPerPage)

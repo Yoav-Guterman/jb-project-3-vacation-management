@@ -7,11 +7,11 @@ import Routing from '../routing/Routing';
 import './Layout.css';
 
 export default function Layout() {
-    const { isAuthenticated } = useContext(AuthContext)!;
+    const { user } = useContext(AuthContext)!;
 
     return (
         <div className='Layout'>
-            {isAuthenticated ? (
+            {user ? (
                 <>
                     <header>
                         <Header />

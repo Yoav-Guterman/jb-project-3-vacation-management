@@ -10,8 +10,8 @@ import EditVacation from '../../vacations/edit-vacation/EditVacation';
 import NotFound from '../not-found/NotFound';
 
 export default function Routing() {
-    const { isAuthenticated, role, isLoading } = useContext(AuthContext)!;
-    const isAdmin = role === 'admin';
+    const { isLoading, user } = useContext(AuthContext)!;
+    const isAdmin = user?.role === 'admin';
 
     // Show loading indicator while authentication state is loading
     if (isLoading) {
@@ -25,8 +25,8 @@ export default function Routing() {
     return (
         <Routes>
             {/* Public routes */}
-            <Route path="/login" element={isAuthenticated ? <Navigate to="/vacations" /> : <Login />} />
-            <Route path="/signup" element={isAuthenticated ? <Navigate to="/vacations" /> : <SignUp />} />
+            <Route path="/login" element={user ? <Navigate to="/vacations" /> : <Login />} />
+            <Route path="/signup" element={user ? <Navigate to="/vacations" /> : <SignUp />} />
 
             {/* Default route */}
             <Route path="/" element={<Navigate to="/vacations" />} />
@@ -34,14 +34,14 @@ export default function Routing() {
             {/* User route - protected */}
             <Route
                 path="/vacations"
-                element={isAuthenticated ? <Vacations /> : <Navigate to="/login" />}
+                element={user ? <Vacations /> : <Navigate to="/login" />}
             />
 
             {/* Admin routes - protected */}
             <Route
                 path="/admin/add-vacation"
                 element={
-                    isAuthenticated
+                    user
                         ? (isAdmin ? <AddVacation /> : <Navigate to="/vacations" />)
                         : <Navigate to="/login" />
                 }
@@ -50,7 +50,7 @@ export default function Routing() {
             <Route
                 path="/admin/edit-vacation/:id"
                 element={
-                    isAuthenticated
+                    user
                         ? (isAdmin ? <EditVacation /> : <Navigate to="/vacations" />)
                         : <Navigate to="/login" />
                 }
