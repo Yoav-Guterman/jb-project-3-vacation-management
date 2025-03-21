@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createVacation, getAllVacations, removeVacation, updateVacation } from "../controllers/vacations/controller";
+import { createVacation, exportFollowersCSV, getAllVacations, removeVacation, updateVacation } from "../controllers/vacations/controller";
 import paramsValidation from "../middlewares/params-validation";
 import { newVacationFilesValidator, newVacationValidator, updateVacationFilesValidator, UpdateVacationValidator, vacationIdValidator, } from "../controllers/vacations/validator";
 import validation from "../middlewares/validation";
@@ -15,6 +15,6 @@ vacationsRouter.get('/', getAllVacations)
 vacationsRouter.post('/', validation(newVacationValidator), filesValidation(newVacationFilesValidator), fileUploader, createVacation)
 vacationsRouter.delete('/:id', paramsValidation(vacationIdValidator), removeVacation)
 vacationsRouter.patch('/:id', paramsValidation(vacationIdValidator), validation(UpdateVacationValidator), filesValidation(updateVacationFilesValidator), fileUploader, updateVacation)
-// maybe add the file validator to patch
+vacationsRouter.get('/reports/followers', exportFollowersCSV);
 
 export default vacationsRouter 

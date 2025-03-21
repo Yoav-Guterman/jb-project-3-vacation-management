@@ -17,6 +17,10 @@
     color: var(--primary-hover);
 }
 
+.headerTitle {
+    color: var(--primary-color);
+}
+
 @media (max-width: 576px) {
     .Header {
         flex-direction: column;

@@ -32,4 +32,12 @@ export default class VacationsService extends AuthAware {
         return response.data
     }
 
+    async exportFollowersCSV(): Promise<Blob> {
+        const response = await this.axiosInstance.get(
+            `${import.meta.env.VITE_REST_SERVER_URL}/vacations/reports/followers`,
+            { responseType: 'blob' } // Important: Tell axios to expect binary data
+        );
+        return response.data;
+    }
+
 }

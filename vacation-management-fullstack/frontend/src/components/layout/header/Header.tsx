@@ -12,8 +12,8 @@ export default function Header() {
 
     return (
         <div className='Header'>
-            <div>
-                Logo
+            <div className='headerTitle'>
+                yoav guterman - john bryce - vacation management project
             </div>
             <div>
                 Hello {user?.firstName} | <button onClick={logMeOut}>logout</button>

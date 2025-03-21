@@ -9,25 +9,54 @@ import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
 import { init, setCurrentPage } from '../../../redux/vacationsSlice'
 import { useContext } from 'react'
 
+// Define filter types as an enum for type safety
+enum FilterType {
+    NONE = "none",
+    FOLLOWING = "following",
+    UPCOMING = "upcoming",
+    ACTIVE = "active"
+}
+
 export default function Vacations() {
     // State for loading and errors
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
+
+    // Add filter state
+    const [activeFilter, setActiveFilter] = useState<FilterType>(FilterType.NONE)
 
     // Get services and state from Redux
     const vacationService = useService(VacationsService)
     const { vacations, currentPage, itemsPerPage } = useAppSelector(state => state.vacations)
     const dispatch = useAppDispatch()
 
-    // Get user role
+    // Get user info
     const { user } = useContext(AuthContext)!
     const isAdmin = user?.role === 'admin'
 
+    // Apply filters to vacations
+    const filteredVacations = vacations.filter(vacation => {
+        const today = new Date();
+        const startDate = new Date(vacation.startDate);
+        const endDate = new Date(vacation.endDate);
+
+        switch (activeFilter) {
+            case FilterType.FOLLOWING:
+                return vacation.followers?.some(follower => follower.id === user?.id);
+            case FilterType.UPCOMING:
+                return startDate > today;
+            case FilterType.ACTIVE:
+                return startDate <= today && endDate >= today;
+            default:
+                return true; // No filter applied
+        }
+    });
+
     // Calculate pagination
-    const totalPages = Math.ceil(vacations.length / itemsPerPage)
+    const totalPages = Math.ceil(filteredVacations.length / itemsPerPage)
     const startIndex = (currentPage - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
-    const currentVacations = vacations.slice(startIndex, endIndex)
+    const currentVacations = filteredVacations.slice(startIndex, endIndex)
 
     // Load vacations
     useEffect(() => {
@@ -48,6 +77,16 @@ export default function Vacations() {
         loadVacations()
     }, [])
 
+    // When filter changes, reset to first page
+    useEffect(() => {
+        dispatch(setCurrentPage(1));
+    }, [activeFilter, dispatch]);
+
+    // Handle filter change
+    function handleFilterChange(newFilter: FilterType) {
+        setActiveFilter(newFilter);
+    }
+
     // Handle page changes
     function handlePageChange(page: number) {
         if (page >= 1 && page <= totalPages) {
@@ -64,6 +103,61 @@ export default function Vacations() {
                     <Link to="/admin/add-vacation" className="add-btn">
                         Add New Vacation
                     </Link>
+                    <Link to="/admin/stats" className="stats-btn">
+                        View Stats
+                    </Link>
+                </div>
+            )}
+
+            {/* Filter controls - only show for regular users, not for admins */}
+            {!isAdmin && (
+                <div className="filter-controls">
+                    <div className="filter-title">Filter Vacations:</div>
+                    <div className="filter-options">
+                        <label className="filter-option">
+                            <input
+                                type="radio"
+                                name="vacation-filter"
+                                value={FilterType.NONE}
+                                checked={activeFilter === FilterType.NONE}
+                                onChange={() => handleFilterChange(FilterType.NONE)}
+                            />
+                            <span>All Vacations</span>
+                        </label>
+
+                        <label className="filter-option">
+                            <input
+                                type="radio"
+                                name="vacation-filter"
+                                value={FilterType.FOLLOWING}
+                                checked={activeFilter === FilterType.FOLLOWING}
+                                onChange={() => handleFilterChange(FilterType.FOLLOWING)}
+                            />
+                            <span>My Followed Vacations</span>
+                        </label>
+
+                        <label className="filter-option">
+                            <input
+                                type="radio"
+                                name="vacation-filter"
+                                value={FilterType.UPCOMING}
+                                checked={activeFilter === FilterType.UPCOMING}
+                                onChange={() => handleFilterChange(FilterType.UPCOMING)}
+                            />
+                            <span>Upcoming Vacations</span>
+                        </label>
+
+                        <label className="filter-option">
+                            <input
+                                type="radio"
+                                name="vacation-filter"
+                                value={FilterType.ACTIVE}
+                                checked={activeFilter === FilterType.ACTIVE}
+                                onChange={() => handleFilterChange(FilterType.ACTIVE)}
+                            />
+                            <span>Currently Active Vacations</span>
+                        </label>
+                    </div>
                 </div>
             )}
 
@@ -78,9 +172,9 @@ export default function Vacations() {
                         <p>{error}</p>
                         <button onClick={() => window.location.reload()}>Try Again</button>
                     </div>
-                ) : vacations.length === 0 ? (
+                ) : filteredVacations.length === 0 ? (
                     <div className="empty-container">
-                        <p>No vacations found.</p>
+                        <p>No vacations found with the selected filter.</p>
                     </div>
                 ) : (
                     <>

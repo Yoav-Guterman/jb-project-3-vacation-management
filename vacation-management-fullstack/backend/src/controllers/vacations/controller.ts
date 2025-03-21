@@ -92,3 +92,41 @@ export async function removeVacation(req: Request<{ id: string }>, res: Response
         next(e);
     }
 }
+
+// In your vacations controller.ts
+export async function exportFollowersCSV(req: Request, res: Response, next: NextFunction) {
+    try {
+        // Fetch all vacations with their followers
+        const vacations = await Vacation.findAll({
+            include: [{
+                model: User,
+                as: 'followers',
+                attributes: ['id'] // We only need the IDs for counting
+            }],
+            order: [['destination', 'ASC']] // Sort by destination
+        });
+
+        // Set headers for CSV download
+        res.setHeader('Content-Type', 'text/csv');
+        res.setHeader('Content-Disposition', 'attachment; filename=vacation_followers.csv');
+
+        // Write CSV header
+        res.write('Destination,Followers\n');
+
+        // Write data rows
+        vacations.forEach(vacation => {
+            // Properly escape any commas in the destination name
+            const safeDestination = vacation.destination.includes(',')
+                ? `"${vacation.destination}"`
+                : vacation.destination;
+
+            res.write(`${safeDestination},${vacation.followers.length}\n`);
+        });
+
+        // End the response
+        res.end();
+
+    } catch (e) {
+        next(e);
+    }
+}

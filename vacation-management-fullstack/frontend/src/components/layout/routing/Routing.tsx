@@ -8,6 +8,7 @@ import Vacations from '../../vacations/vacations/Vacations';
 import AddVacation from '../../vacations/add-vacation/AddVacation';
 import EditVacation from '../../vacations/edit-vacation/EditVacation';
 import NotFound from '../not-found/NotFound';
+import VacationStats from '../../vacations/vacations-stats/VacationsStats';
 
 export default function Routing() {
     const { isLoading, user } = useContext(AuthContext)!;
@@ -55,6 +56,14 @@ export default function Routing() {
                         : <Navigate to="/login" />
                 }
             />
+
+            <Route path="/admin/stats"
+                element={
+                    user
+                        ? (isAdmin ? <VacationStats /> : <Navigate to="/vacations" />)
+                        : <Navigate to="/login" />
+
+                } />
 
             {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />
