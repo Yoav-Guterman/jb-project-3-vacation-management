@@ -35,7 +35,7 @@ export default function SignUp(): JSX.Element {
     return (
         <div className='SignUp'>
             <div className='form-container'>
-                <h3 className='form-title'>create an account</h3>
+                <h3 className='form-title'>Create an account</h3>
                 <form onSubmit={handleSubmit(submit)}>
                     <div className="form-group">
                         <input
@@ -44,7 +44,7 @@ export default function SignUp(): JSX.Element {
                                 required: 'First name is required',
                                 minLength: {
                                     value: 2,
-                                    message: 'First name must be at least 2 characters'
+                                    message: 'first name must be at least 2 characters'
                                 }
                             })}
                         />
@@ -53,12 +53,12 @@ export default function SignUp(): JSX.Element {
 
                     <div className="form-group">
                         <input
-                            placeholder='lastName'
+                            placeholder='last name'
                             {...register('lastName', {
-                                required: 'Last name is required',
+                                required: 'last name is required',
                                 minLength: {
                                     value: 2,
-                                    message: 'Last name must be at least 2 characters'
+                                    message: 'last name must be at least 2 characters'
                                 }
                             })}
                         />
@@ -70,7 +70,7 @@ export default function SignUp(): JSX.Element {
                             placeholder='email'
                             type='email'
                             {...register('email', {
-                                required: 'Email is required'
+                                required: 'email is required'
                             })}
                         />
                         {errors.email && <span className="error">{errors.email.message}</span>}
@@ -81,10 +81,10 @@ export default function SignUp(): JSX.Element {
                             placeholder='password'
                             type="password"
                             {...register('password', {
-                                required: 'Password is required',
+                                required: 'password is required',
                                 minLength: {
                                     value: 4,
-                                    message: 'Password must be at least 4 characters'
+                                    message: 'password must be at least 4 characters'
                                 }
                             })}
                         />
@@ -95,7 +95,7 @@ export default function SignUp(): JSX.Element {
                         {isLoading ? 'Signing up...' : 'Sign Up'}
                     </button>
                 </form>
-                <h6>already have an account? Log in here</h6>
+                <h6>Already have an account? Log in here</h6>
                 <button
                     onClick={goToLogIn}
                     className="btn btn-link"

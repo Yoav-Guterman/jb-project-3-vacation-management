@@ -77,15 +77,15 @@ export default function AddVacation(): JSX.Element {
                         {...register('destination', {
                             required: {
                                 value: true,
-                                message: 'Destination is required'
+                                message: 'destination is required'
                             },
                             minLength: {
                                 value: 3,
-                                message: 'Destination must be at least 3 characters'
+                                message: 'destination must be at least 3 characters'
                             },
                             maxLength: {
                                 value: 50,
-                                message: 'Destination must be less than 50 characters'
+                                message: 'destination must be less than 50 characters'
                             }
                         })}
                     />
@@ -102,11 +102,11 @@ export default function AddVacation(): JSX.Element {
                         {...register('description', {
                             required: {
                                 value: true,
-                                message: 'Description is required'
+                                message: 'description is required'
                             },
                             minLength: {
                                 value: 10,
-                                message: 'Description must be at least 10 characters'
+                                message: 'description must be at least 10 characters'
                             },
                         })}
                     />
@@ -125,7 +125,7 @@ export default function AddVacation(): JSX.Element {
                             {...register('startDate', {
                                 required: {
                                     value: true,
-                                    message: 'Start date is required'
+                                    message: 'start date is required'
                                 },
                                 validate: value => {
                                     // value is something like "2025-03-20" from the date input
@@ -148,7 +148,7 @@ export default function AddVacation(): JSX.Element {
                             {...register('endDate', {
                                 required: {
                                     value: true,
-                                    message: 'End date is required'
+                                    message: 'end date is required'
                                 },
                                 validate: value => {
                                     const startDate = new Date(getValues().startDate);
@@ -172,15 +172,15 @@ export default function AddVacation(): JSX.Element {
                         {...register('price', {
                             required: {
                                 value: true,
-                                message: 'Price is required'
+                                message: 'price is required'
                             },
                             min: {
                                 value: 0,
-                                message: 'Price must be positive'
+                                message: 'price must be positive'
                             },
                             max: {
                                 value: 10000,
-                                message: 'Price cannot exceed 10,000'
+                                message: 'price cannot exceed 10,000'
                             }
                         })}
                     />
@@ -199,7 +199,7 @@ export default function AddVacation(): JSX.Element {
                         {...register('vacationImage', {
                             required: {
                                 value: true,
-                                message: 'Vacation image is required'
+                                message: 'vacation image is required'
                             }
                         })}
                         onChange={previewImage}

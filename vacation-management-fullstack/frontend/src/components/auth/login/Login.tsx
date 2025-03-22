@@ -42,7 +42,7 @@ export default function Login(): JSX.Element {
                         type='email'
                         placeholder='email'
                         {...register('email', {
-                            required: 'Email is required'
+                            required: 'email is required'
                         })}
                     />
                     {errors.email && <span className="error">{errors.email.message}</span>}
@@ -53,7 +53,7 @@ export default function Login(): JSX.Element {
                         placeholder='password'
                         type="password"
                         {...register('password', {
-                            required: 'Password is required',
+                            required: 'password is required',
                             minLength: {
                                 value: 4,
                                 message: 'Password must be at least 4 characters'
@@ -68,7 +68,7 @@ export default function Login(): JSX.Element {
                 </button>
             </form>
 
-            <h6>don't have an account? sign in here</h6>
+            <h6>Don't have an account? sign in here</h6>
             <button
                 onClick={goToSignup}
                 className="btn btn-link">

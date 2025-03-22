@@ -16,7 +16,7 @@ export default function Header() {
                 yoav guterman - john bryce - vacation management project
             </div>
             <div>
-                Hello {user?.firstName} | <button onClick={logMeOut}>logout</button>
+                Hello {user?.firstName} {user?.lastName} | <button onClick={logMeOut}>logout</button>
             </div>
         </div>
     )
