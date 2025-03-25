@@ -95,6 +95,11 @@ export async function removeVacation(req: Request<{ id: string }>, res: Response
         res.json({
             success: true
         })
+
+        socket.emit(SocketMessages.REMOVE_VACATION, {
+            from: req.headers['x-client-id'], // req.header(), req.get()
+            data: { id: id }
+        })
     } catch (e) {
         next(e);
     }

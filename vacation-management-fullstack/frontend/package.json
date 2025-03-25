@@ -21,7 +21,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
     "react-toastify": "^11.0.3",
-    "socket-enums-yoavguterman": "^1.0.0",
+    "socket-enums-yoavguterman": "^1.2.0",
     "socket.io-client": "^4.8.1",
     "uuid": "^11.1.0"
   },
