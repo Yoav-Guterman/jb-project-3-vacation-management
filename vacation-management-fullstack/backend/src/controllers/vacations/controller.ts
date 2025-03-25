@@ -3,6 +3,8 @@ import Vacation from "../../models/vacation";
 import User from "../../models/user";
 import AppError from "../../errors/app-error";
 import { StatusCodes } from "http-status-codes";
+import socket from "../../io/io";
+import SocketMessages from "socket-enums-yoavguterman";
 
 export async function getAllVacations(req: Request, res: Response, next: NextFunction) {
     try {
@@ -28,6 +30,11 @@ export async function createVacation(req: Request<{}, {}, { destination: string,
 
         const newVacation = await Vacation.create(createParams)
         res.json(newVacation);
+
+        socket.emit(SocketMessages.ADD_VACATION, {
+            from: req.headers['x-client-id'], // req.header(), req.get()
+            data: newVacation
+        })
 
     } catch (e) {
         next(e);

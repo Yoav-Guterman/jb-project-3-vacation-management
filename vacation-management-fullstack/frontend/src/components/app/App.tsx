@@ -4,6 +4,7 @@ import './App.css'
 import { Provider } from "react-redux";
 import store from "../../redux/store";
 import Auth from "../auth/auth/Auth";
+import Io from "../io/Io";
 // import { ToastContainer } from "react-toastify";
 // continue it
 export default function App(): JSX.Element {
@@ -12,11 +13,12 @@ export default function App(): JSX.Element {
       <BrowserRouter>
         <Provider store={store}>
           <Auth>
-            <Layout />
+            <Io>
+              <Layout />
+            </Io>
           </Auth>
         </Provider>
       </BrowserRouter>
-
     </div>
   )
 }
