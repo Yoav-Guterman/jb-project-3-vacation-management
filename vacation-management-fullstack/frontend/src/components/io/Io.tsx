@@ -4,7 +4,8 @@ import { useAppDispatch } from "../../redux/hooks"
 import { io } from "socket.io-client"
 import SocketMessages from "socket-enums-yoavguterman";
 import Vacation from "../../models/vacation/Vacation";
-import { newVacation, remove } from "../../redux/vacationsSlice";
+import { followVacation, newVacation, remove, unfollowVacation, update } from "../../redux/vacationsSlice";
+import User from "../../models/user/User";
 
 interface SocketContextInterface {
     xClientId: string
@@ -49,7 +50,24 @@ export default function Io(props: PropsWithChildren): JSX.Element {
                             dispatch(remove(deleteVacationPayload))
                             break;
                         }
-
+                    case SocketMessages.UPDATE_VACATION:
+                        {
+                            const deleteVacationPayload = payload.data as Vacation
+                            dispatch(update(deleteVacationPayload))
+                            break;
+                        }
+                    case SocketMessages.FOLLOW_VACATION:
+                        {
+                            const followVacationsPayload = payload.data as { vacationId: string, user: User }
+                            dispatch(followVacation(followVacationsPayload))
+                            break;
+                        }
+                    case SocketMessages.UNFOLLOW_VACATION:
+                        {
+                            const unfollowVacationsPayload = payload.data as { vacationId: string, user: User }
+                            dispatch(unfollowVacation(unfollowVacationsPayload))
+                            break;
+                        }
                 }
             }
 

@@ -76,6 +76,11 @@ export async function updateVacation(req: Request<{ id: string }, {}, {
         await updatedVacation.save() // <= this command generates the actual SQL UPDATE
         res.json(updatedVacation)
 
+        socket.emit(SocketMessages.UPDATE_VACATION, {
+            from: req.headers['x-client-id'], // req.header(), req.get()
+            data: updatedVacation
+        })
+
     } catch (e) {
         next(e)
     }

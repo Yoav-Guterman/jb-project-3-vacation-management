@@ -37,7 +37,6 @@ export const vacationsSlice = createSlice({
                 state.vacations[index] = action.payload
             }
         },
-        // Follow functionality
         followVacation: (state, action: PayloadAction<{ vacationId: string, user: User }>) => {
             const index = state.vacations.findIndex(v => v.id === action.payload.vacationId);
             if (index > -1) {

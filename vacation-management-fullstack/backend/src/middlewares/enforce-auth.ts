@@ -8,7 +8,7 @@ import User from "../models/user";
 declare global {
     namespace Express {
         interface Request {
-            userId: string
+            user: User
         }
     }
 }
@@ -27,7 +27,7 @@ export default function enforceAuth(req: Request, res: Response, next: NextFunct
 
     try {
         const user = verify(parts[1], config.get<string>('app.jwtSecret')) as User
-        req.userId = user.id
+        req.user = user
         next()
     } catch (e) {
         next(new AppError(StatusCodes.UNAUTHORIZED, 'invalid JWT'))
