@@ -8,6 +8,8 @@ import useService from '../../../hooks/useService'
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
 import { update } from '../../../redux/vacationsSlice'
 import LoadingButton from '../../common/loadingButton/LoadingButton'
+import axios from 'axios'
+import { showToast } from '../../common/toast/Toast'
 
 export default function EditVacation(): JSX.Element {
     // State to track submission status
@@ -57,7 +59,7 @@ export default function EditVacation(): JSX.Element {
             }
         } else {
             // No vacation found, redirect back to vacations list
-            alert('Vacation not found')
+            showToast.error('Vacation not found')
             navigate('/vacations')
         }
     }, [vacation, reset, navigate])
@@ -79,11 +81,16 @@ export default function EditVacation(): JSX.Element {
                 // Update Redux state
                 dispatch(update(updatedVacation))
 
+                showToast.success(`vacation to ${updatedVacation.destination} updated`)
                 // Redirect back to the vacations list
                 navigate('/vacations')
             }
-        } catch (error) {
-            alert(error)
+        } catch (err: unknown) {
+            if (axios.isAxiosError(err)) {
+                showToast.error(err.response?.data || 'An error occurred');
+            } else {
+                showToast.error('An unexpected error occurred');
+            }
         } finally {
             setIsSubmitting(false)
         }

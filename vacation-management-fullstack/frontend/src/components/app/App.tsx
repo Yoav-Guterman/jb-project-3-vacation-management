@@ -5,11 +5,12 @@ import { Provider } from "react-redux";
 import store from "../../redux/store";
 import Auth from "../auth/auth/Auth";
 import Io from "../io/Io";
-// import { ToastContainer } from "react-toastify";
-// continue it
+import ToastProvider from "../common/toast/ToastProvider";
+
 export default function App(): JSX.Element {
   return (
     <div className="App">
+      <ToastProvider />
       <BrowserRouter>
         <Provider store={store}>
           <Auth>

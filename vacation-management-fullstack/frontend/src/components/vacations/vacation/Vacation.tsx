@@ -9,6 +9,9 @@ import VacationsService from '../../../services/auth-aware/Vacations';
 import { remove, followVacation, unfollowVacation } from '../../../redux/vacationsSlice';
 import FollowService from '../../../services/auth-aware/Follows';
 import { AuthContext } from '../../auth/auth/Auth';
+import { showToast } from '../../common/toast/Toast';
+import axios from 'axios';
+
 
 interface VacationProps {
     vacation: VacationModel;
@@ -53,9 +56,14 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
             if (confirm(`Are you sure you want to delete this vacation to ${destination}?`)) {
                 await vacationsService.remove(id);
                 dispatch(remove({ id }));
+                showToast.success(`Vacation to ${destination} deleted`);
             }
-        } catch (e) {
-            alert(e);
+        } catch (err: unknown) {
+            if (axios.isAxiosError(err)) {
+                showToast.error(err.response?.data || 'An error occurred');
+            } else {
+                showToast.error('An unexpected error occurred');
+            }
         }
     }
 
@@ -69,15 +77,21 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
                 // Unfollow
                 await followService.unfollowVacation(id);
                 dispatch(unfollowVacation({ vacationId: id, user }));
+                showToast.success(`Successfully unfollowed ${destination} vacation`);
             } else {
                 // Follow
                 await followService.followVacation(id);
                 dispatch(followVacation({ vacationId: id, user }));
+                showToast.success(`Successfully followed ${destination} vacation`);
             }
-        } catch (e) {
-            console.error('Follow action failed:', e);
-            alert('Failed to update follow status. Please try again.');
-        } finally {
+        } catch (err: unknown) {
+            if (axios.isAxiosError(err)) {
+                showToast.error(err.response?.data || 'An error occurred');
+            } else {
+                showToast.error('An unexpected error occurred');
+            }
+        }
+        finally {
             setIsFollowLoading(false);
         }
     }

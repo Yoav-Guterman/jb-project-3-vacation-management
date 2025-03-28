@@ -28,6 +28,7 @@ export default function Auth(props: PropsWithChildren): JSX.Element {
             return jwtDecode<User>(jwt);
         } catch (error) {
             console.error("Invalid token:", error);
+
             // If token is invalid, clear it
             localStorage.removeItem(JWT_KEY_NAME);
             return null;

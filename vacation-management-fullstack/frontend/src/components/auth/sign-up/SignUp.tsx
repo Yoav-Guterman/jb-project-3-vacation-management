@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { AuthContext } from '../auth/Auth'
 import Signup from '../../../models/user/Signup'
+import axios from 'axios'
+import { showToast } from '../../common/toast/Toast'
 
 export default function SignUp(): JSX.Element {
     // Use formState to access errors
@@ -19,10 +21,14 @@ export default function SignUp(): JSX.Element {
             setIsLoading(true)
             const jwt = await auth.signUp(signUp)
             newLogin(jwt)
+            showToast.success('account created successfully');
             navigate('/vacations')
-        } catch (e) {
-            console.error('Signup failed:', e)
-            alert('Registration failed. Please try again.')
+        } catch (err: unknown) {
+            if (axios.isAxiosError(err)) {
+                showToast.error(err.response?.data || 'An error occurred');
+            } else {
+                showToast.error('An unexpected error occurred');
+            }
         } finally {
             setIsLoading(false)
         }

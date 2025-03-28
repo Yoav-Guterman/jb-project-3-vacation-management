@@ -25,7 +25,6 @@ export const UpdateVacationValidator = Joi.object({
             'date.min': 'End date must be after start date',
         }),
     price: Joi.number().min(0).max(10000).required(),
-    // vacationImage: Joi.any().optional()
 });
 
 export const newVacationFilesValidator = Joi.object({

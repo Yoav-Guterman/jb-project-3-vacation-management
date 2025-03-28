@@ -7,6 +7,8 @@ import useService from '../../../hooks/useService'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '../../../redux/hooks'
 import { newVacation } from '../../../redux/vacationsSlice'
+import axios from 'axios'
+import { showToast } from '../../common/toast/Toast'
 
 export default function AddVacation(): JSX.Element {
     // Set up form handling with react-hook-form
@@ -47,10 +49,14 @@ export default function AddVacation(): JSX.Element {
             setPreviewImageSrc('')
 
             // Redirect to the vacations list page
+            showToast.success(`vacation to ${newVacationFromServer.destination} successfully added`)
             navigate('/vacations')
-        } catch (error) {
-            console.error('Error creating vacation:', error)
-            alert('Failed to create vacation. Please try again.')
+        } catch (err: unknown) {
+            if (axios.isAxiosError(err)) {
+                showToast.error(err.response?.data || 'Error creating vacation');
+            } else {
+                showToast.error('Failed to create vacation. Please try again');
+            }
         } finally {
             setIsSubmitting(false)
         }

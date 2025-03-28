@@ -74,6 +74,11 @@ export async function updateVacation(req: Request<{ id: string }, {}, {
         }
 
         await updatedVacation.save() // <= this command generates the actual SQL UPDATE
+
+        // const vacationWithFollowers = await Vacation.findByPk(req.params.id, {
+        //     include: [User] // Include User model to get followers
+        // })
+        await updatedVacation.reload({ include: [User] })
         res.json(updatedVacation)
 
         socket.emit(SocketMessages.UPDATE_VACATION, {

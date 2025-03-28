@@ -5,6 +5,8 @@ import { useContext, useState } from 'react'
 import { AuthContext } from '../auth/Auth'
 import LoginModel from '../../../models/user/Login'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { showToast } from '../../common/toast/Toast'
 
 export default function Login(): JSX.Element {
 
@@ -20,10 +22,14 @@ export default function Login(): JSX.Element {
             setIsLoading(true)
             const jwt = await auth.login(login)
             newLogin(jwt)
-            navigate('/vacations') // Assuming you want to navigate to vacations after login
-        } catch (e) {
-            console.error('Login failed:', e)
-            alert('Invalid email or password. Please try again.')
+            showToast.success('logged in successfully');
+            navigate('/vacations')
+        } catch (err: unknown) {
+            if (axios.isAxiosError(err)) {
+                showToast.error(err.response?.data || 'An error occurred');
+            } else {
+                showToast.error('An unexpected error occurred');
+            }
         } finally {
             setIsLoading(false)
         }
