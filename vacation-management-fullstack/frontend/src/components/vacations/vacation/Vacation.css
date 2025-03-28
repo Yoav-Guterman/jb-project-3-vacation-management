@@ -118,8 +118,13 @@
     color: #1a73e8;
 }
 
+.follow-button.following:hover {
+    background-color: #ffdcdc;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3);
+}
+
 .follow-button:hover {
-    background-color: #f1f3f4;
+    background-color: #e6e6e6;
     box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3);
 }
 

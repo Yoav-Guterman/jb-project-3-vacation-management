@@ -33,8 +33,6 @@ export async function followVacation(req: Request<{ vacationId: string }>, res: 
             )
         )
         next(e)
-        // check later the situation when someone is trying 
-        // to add wrong uuid vacation
     }
 }
 

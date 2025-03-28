@@ -1,6 +1,5 @@
 import { Server } from "socket.io";
 import config from 'config'
-import { v4 } from "uuid";
 
 const port = config.get<number>('io.port')
 

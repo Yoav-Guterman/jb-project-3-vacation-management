@@ -108,10 +108,10 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
             {imageUrl && !imageError && (
                 <div className="vacation-image">
                     <img
-                        src={imageUrl}
+                        src={`${import.meta.env.VITE_AWS_SERVER_URL}/${imageUrl}`}
                         alt={destination}
                         onError={(e) => {
-                            console.error(`Failed to load image: ${imageUrl}`);
+                            console.error(`Failed to load image`);
                             e.currentTarget.onerror = null;
                             setImageError(true);
                         }}

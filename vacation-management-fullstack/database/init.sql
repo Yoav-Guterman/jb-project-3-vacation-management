@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Mar 10, 2025 at 09:06 AM
+-- Generation Time: Mar 28, 2025 at 01:34 PM
 -- Server version: 9.2.0
 -- PHP Version: 8.2.27
 SET
@@ -59,220 +59,94 @@ INSERT INTO
     )
 VALUES
     (
-        '034485be-cfd2-48a7-b80d-f54773eab18c',
-        'j0t4v9t5-0v3v-3824-u3uv-17u6q9x4y14',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '0d3378e8-41c8-43ce-bc4c-89a4ec5e47e3',
+        'e1f2a3b4-c5d6-4a78-e9f0-a1b2c3d4e5f6',
+        '2025-03-27 08:25:07',
+        '2025-03-27 08:25:07'
     ),
     (
-        '034485be-cfd2-48a7-b80d-f54773eab18c',
-        'l2v6x1v7-2x5x-5046-w5wx-39w8s1z6a36',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'a4b72e8f-2b9c-4d1e-a5f7-8e9b3c1d7a6b',
+        'b2c3d4e5-f6a7-4809-b0c1-d2e3f4a5b6c7',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '034485be-cfd2-48a7-b80d-f54773eab18c',
-        'n4x8z3x9-4z7z-7268-y7yz-51y0u3b8c58',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'a4b72e8f-2b9c-4d1e-a5f7-8e9b3c1d7a6b',
+        'e1f2a3b4-c5d6-4a78-e9f0-a1b2c3d4e5f6',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '034485be-cfd2-48a7-b80d-f54773eab18c',
-        'p6z0b5z1-6b9b-9480-a9ab-73a2w5d0e70',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'a4b72e8f-2b9c-4d1e-a5f7-8e9b3c1d7a6b',
+        'f6a7b8c9-d0e1-4a23-f4a5-b6c7d8e9f0a1',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '1230ae30-dc4f-4752-bd84-092956f5c633',
-        '11a5c0a6-1c4c-4f35-b4bc-28bdc70f5e25',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'b5c83f91-3c0d-4e2f-b6a8-9f0d4e2c1b3a',
+        'b2c3d4e5-f6a7-4809-b0c1-d2e3f4a5b6c7',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '1230ae30-dc4f-4752-bd84-092956f5c633',
-        '33c7e2c8-3e6e-6157-d6de-40dff92f7g47',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'b5c83f91-3c0d-4e2f-b6a8-9f0d4e2c1b3a',
+        'f6a7b8c9-d0e1-4a23-f4a5-b6c7d8e9f0a1',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '1230ae30-dc4f-4752-bd84-092956f5c633',
-        '55e9g4e0-5g8g-8379-f8fg-62f1b4i9j69',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'c016829d-a157-4602-a018-c5bd3d3fa8e6',
+        '5c3128ce-d64e-418a-859c-439e29b4c02d',
+        '2025-03-27 09:43:56',
+        '2025-03-27 09:43:56'
     ),
     (
-        '1230ae30-dc4f-4752-bd84-092956f5c633',
-        '77g1i6g2-7i0i-0591-h0hi-84h3d6k1l81',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'c016829d-a157-4602-a018-c5bd3d3fa8e6',
+        'c9d0e1f2-a3b4-4a56-c7d8-e9f0a1b2c3d4',
+        '2025-03-28 12:46:33',
+        '2025-03-28 12:46:33'
     ),
     (
-        '1230ae30-dc4f-4752-bd84-092956f5c633',
-        '99i3k8i4-9k2k-2713-j2jk-06j5f8m3n03',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'c016829d-a157-4602-a018-c5bd3d3fa8e6',
+        'e1f2a3b4-c5d6-4a78-e9f0-a1b2c3d4e5f6',
+        '2025-03-27 08:24:53',
+        '2025-03-27 08:24:53'
     ),
     (
-        '1230ae30-dc4f-4752-bd84-092956f5c633',
-        'b2l6n1l7-2n5n-5046-m5mn-39m8i1p6q36',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'c6d94f01-4d1e-4f3a-c7b9-0a1e5f3d2c4b',
+        'b2c3d4e5-f6a7-4809-b0c1-d2e3f4a5b6c7',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '4b1193cc-7ba1-462c-99c5-2e3ea4ab6d14',
-        '00j4l9j5-0l3l-3824-k3kl-17k6g9n4o14',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'c6d94f01-4d1e-4f3a-c7b9-0a1e5f3d2c4b',
+        'c9d0e1f2-a3b4-4a56-c7d8-e9f0a1b2c3d4',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '4b1193cc-7ba1-462c-99c5-2e3ea4ab6d14',
-        '22b6d1b7-2d5d-5046-c5cd-39cee81f6f36',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'c6d94f01-4d1e-4f3a-c7b9-0a1e5f3d2c4b',
+        'd4e5f6a7-b8c9-4a01-d2e3-f4a5b6c7d8e9',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '4b1193cc-7ba1-462c-99c5-2e3ea4ab6d14',
-        '44d8f3d9-4f7f-7268-e7ef-51e0a3h8i58',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'd7e05a12-5e2f-4a4b-d8c0-1b2f6a4e3d5c',
+        'b8c9d0e1-f2a3-4a45-b6c7-d8e9f0a1b2c3',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '4b1193cc-7ba1-462c-99c5-2e3ea4ab6d14',
-        '66f0h5f1-6h9h-9480-g9gh-73g2c5j0k70',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'd7e05a12-5e2f-4a4b-d8c0-1b2f6a4e3d5c',
+        'd4e5f6a7-b8c9-4a01-d2e3-f4a5b6c7d8e9',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '4b1193cc-7ba1-462c-99c5-2e3ea4ab6d14',
-        '88h2j7h3-8j1j-1602-i1ij-95i4e7l2m92',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '57ca1e6a-fc89-4d28-ad45-a1f351862cfc',
-        'a1k5m0k6-1m4m-4935-l4lm-28l7h0o5p25',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '57ca1e6a-fc89-4d28-ad45-a1f351862cfc',
-        'c3m7o2m8-3o6o-6157-n6no-40n9j2q7r47',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '57ca1e6a-fc89-4d28-ad45-a1f351862cfc',
-        'e5o9q4o0-5q8q-8379-p8pq-62p1l4s9t69',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '57ca1e6a-fc89-4d28-ad45-a1f351862cfc',
-        'g7q1s6q2-7s0s-0591-r0rs-84r3n6u1v81',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'a8c25830-579a-4f1d-98e0-9d5f06d2b3c7',
-        '44d8f3d9-4f7f-7268-e7ef-51e0a3h8i58',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'a8c25830-579a-4f1d-98e0-9d5f06d2b3c7',
-        'r8b2d7b3-8d1d-1602-c1cd-95c4y7f2g92',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'a8c25830-579a-4f1d-98e0-9d5f06d2b3c7',
-        't0d4f9d5-0f3f-3824-e3ef-17e6a9h4i14',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'b742c63a-95b0-4d13-aef0-d14268cc439c',
-        'd4n8p3n9-4p7p-7268-o7op-51o0k3r8s58',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'b742c63a-95b0-4d13-aef0-d14268cc439c',
-        'f6p0r5p1-6r9r-9480-q9qr-73q2m5t0u70',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'bff2018c-b130-4de4-b645-3246b6e4dbb6',
-        '11a5c0a6-1c4c-4f35-b4bc-28bdc70f5e25',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'bff2018c-b130-4de4-b645-3246b6e4dbb6',
-        'i9s3u8s4-9u2u-2713-t2tu-06t5p8w3x03',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'bff2018c-b130-4de4-b645-3246b6e4dbb6',
-        'k1u5w0u6-1w4w-4935-v4vw-28v7r0y5z25',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'bff2018c-b130-4de4-b645-3246b6e4dbb6',
-        'm3w7y2w8-3y6y-6157-x6xy-40x9t2a7b47',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'bff2018c-b130-4de4-b645-3246b6e4dbb6',
-        'o5y9a4y0-5a8a-8379-z8za-62z1v4c9d69',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'bff2018c-b130-4de4-b645-3246b6e4dbb6',
-        'q7a1c6a2-7c0c-0591-b0bc-84b3x6e1f81',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'bff2018c-b130-4de4-b645-3246b6e4dbb6',
-        's9c3e8c4-9e2e-2713-d2de-06d5z8g3h03',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'c58f2ac1-b6df-45d2-84bc-e12bc9a8e321',
-        '22b6d1b7-2d5d-5046-c5cd-39cee81f6f36',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'c58f2ac1-b6df-45d2-84bc-e12bc9a8e321',
-        '55e9g4e0-5g8g-8379-f8fg-62f1b4i9j69',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'c58f2ac1-b6df-45d2-84bc-e12bc9a8e321',
-        '88h2j7h3-8j1j-1602-i1ij-95i4e7l2m92',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'c58f2ac1-b6df-45d2-84bc-e12bc9a8e321',
-        'b2l6n1l7-2n5n-5046-m5mn-39m8i1p6q36',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'c58f2ac1-b6df-45d2-84bc-e12bc9a8e321',
-        'h8r2t7r3-8t1t-1602-s1st-95s4o7v2w92',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'e8f16b23-6f3a-485c-e9d1-2c3a7b5f4e6d',
+        'f2a3b4c5-d6e7-4a89-f0a1-b2c3d4e5f6a7',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     );
 
 -- --------------------------------------------------------
@@ -309,94 +183,174 @@ INSERT INTO
     )
 VALUES
     (
-        '034485be-cfd2-48a7-b80d-f54773eab18c',
-        'David',
-        'Brown',
-        'david@example.com',
+        '0d3378e8-41c8-43ce-bc4c-89a4ec5e47e3',
+        'יואב',
+        'גוטרמן',
+        'yoavguterman1st@gmail.com',
         '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
         'user',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-03-27 08:12:37',
+        '2025-03-27 08:12:37'
     ),
     (
-        '1230ae30-dc4f-4752-bd84-092956f5c633',
+        '16743767-5b2e-40ca-bf27-2d2f06ec97d3',
+        'aa',
+        'aa',
+        'aaa@gmail.com',
+        '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
+        'user',
+        '2025-03-19 12:55:44',
+        '2025-03-19 12:55:44'
+    ),
+    (
+        '5dbda961-4c34-45e8-a6f5-6a661307e5d5',
+        'yoav',
+        'guterman',
+        'a@as1.com',
+        '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
+        'user',
+        '2025-03-19 13:08:39',
+        '2025-03-19 13:08:39'
+    ),
+    (
+        '8940887e-413a-400f-bb45-088d4d896fc0',
+        'liron',
+        'guterman',
+        'lguterman@gmail.com',
+        '4dd033c89803abc5d940e14556dffae740565218270c3287e8e6bfb6dfda5e41',
+        'user',
+        '2025-03-22 14:27:00',
+        '2025-03-22 14:27:00'
+    ),
+    (
+        'a4b72e8f-2b9c-4d1e-a5f7-8e9b3c1d7a6b',
         'John',
-        'Doe',
-        'john@example.com',
-        '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
-        'user',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '4b1193cc-7ba1-462c-99c5-2e3ea4ab6d14',
-        'Jane',
         'Smith',
-        'jane@example.com',
+        'john.smith@example.com',
         '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
         'user',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        '57ca1e6a-fc89-4d28-ad45-a1f351862cfc',
+        'b5c83f91-3c0d-4e2f-b6a8-9f0d4e2c1b3a',
+        'Jane',
+        'Doe',
+        'jane.doe@example.com',
+        '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
+        'user',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
+    ),
+    (
+        'c016829d-a157-4602-a018-c5bd3d3fa8e6',
+        'yoav',
+        'guterman',
+        'yoavguterman@gmail.com',
+        'd1b505f5228e233c20a0edd4b0b6bb2a9f668dfc5bc40023bfe6f4048ebfdd59',
+        'user',
+        '2025-03-17 12:25:19',
+        '2025-03-17 12:25:19'
+    ),
+    (
+        'c6d94f01-4d1e-4f3a-c7b9-0a1e5f3d2c4b',
         'Michael',
         'Johnson',
-        'michael@example.com',
+        'michael.johnson@example.com',
         '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
         'user',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        'a8c25830-579a-4f1d-98e0-9d5f06d2b3c7',
-        'Sarah',
-        'Miller',
-        'sarah@example.com',
+        'c6e3dbae-cd6a-4bcb-8eab-cf99e0038d9d',
+        'asd',
+        'asd',
+        'a@a.ca',
         '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
         'user',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-03-19 12:58:40',
+        '2025-03-19 12:58:40'
     ),
     (
-        'b742c63a-95b0-4d13-aef0-d14268cc439c',
-        'Robert',
-        'Davis',
-        'robert@example.com',
+        'd482872b-9000-42a5-9fc5-ac6812509bec',
+        'yoav',
+        'guterman',
+        'yoavguterman@gmail.co',
         '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
         'user',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-03-19 13:09:42',
+        '2025-03-19 13:09:42'
     ),
     (
-        'bff2018c-b130-4de4-b645-3246b6e4dbb6',
+        'd7e05a12-5e2f-4a4b-d8c0-1b2f6a4e3d5c',
         'Emily',
         'Williams',
-        'emily@example.com',
+        'emily.williams@example.com',
         '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
         'user',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        'c58f2ac1-b6df-45d2-84bc-e12bc9a8e321',
-        'Jennifer',
-        'Garcia',
-        'jennifer@example.com',
+        'de97942f-cfd1-41df-9e3a-01c0485b3da3',
+        'test',
+        'test',
+        'test@gmail.com',
         '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
         'user',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-03-19 14:01:58',
+        '2025-03-19 14:01:58'
     ),
     (
-        'd9e5b712-71d0-4bb0-9a1c-f23ae6c3d6a8',
+        'e8f16b23-6f3a-485c-e9d1-2c3a7b5f4e6d',
+        'David',
+        'Brown',
+        'david.brown@example.com',
+        '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
+        'user',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
+    ),
+    (
+        'f6f436d5-104f-4122-a34b-108b3685b447',
+        'stav',
+        'yeruham',
+        'stavye11003@gmail.com',
+        'a811b3eccd102b67286aee0a440f5fbd0383cf9bc3c2b90b2ec013301a8a1a94',
+        'user',
+        '2025-03-20 18:18:17',
+        '2025-03-20 18:18:17'
+    ),
+    (
+        'f9a27c34-7a4b-496d-f0e2-3d4b8c6a5f7e',
         'Admin',
         'User',
         'admin@example.com',
         '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
         'admin',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
+    ),
+    (
+        'fb79417e-364b-432c-a5df-70e89dd07c1e',
+        'ori',
+        'yaniv',
+        'oriyaniv@gmail.com',
+        '7f7737fddd2842bc2afdbf1868aaa8e986b83133a1f010fe96535c15e4584628',
+        'user',
+        '2025-03-23 18:07:20',
+        '2025-03-23 18:07:20'
+    ),
+    (
+        'ffdfea74-8720-4300-afbc-f1717629e7cb',
+        'cfir',
+        'yeru',
+        'cfir@gmail.com',
+        'dfc72360fae6e2b2dfdd7a06d447ba4a5104be20b1329e8700752b962e29f04e',
+        'user',
+        '2025-03-21 19:09:09',
+        '2025-03-21 19:09:09'
     );
 
 -- --------------------------------------------------------
@@ -435,334 +389,103 @@ INSERT INTO
     )
 VALUES
     (
-        '00j4l9j5-0l3l-3824-k3kl-17k6g9n4o14',
-        'Dubai, UAE',
-        'Marvel at futuristic architecture, shop in luxury malls, and experience desert adventures.',
-        '2025-10-05 00:00:00',
-        '2025-10-12 00:00:00',
-        1499,
-        'https://images.unsplash.com/photo-1512453979798-5ea266f8880c',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '11a5c0a6-1c4c-4f35-b4bc-28bdc70f5e25',
-        'Paris, France',
-        'Experience the city of love with its iconic Eiffel Tower, historic neighborhoods, and world-class cuisine.',
-        '2025-06-15 00:00:00',
-        '2025-06-22 00:00:00',
-        1299,
-        'https://images.unsplash.com/photo-1502602898657-3e91760cbb34',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '22b6d1b7-2d5d-5046-c5cd-39cee81f6f36',
-        'Rome, Italy',
-        'Explore ancient ruins, Vatican City, and enjoy authentic Italian pizza and gelato.',
-        '2025-07-10 00:00:00',
-        '2025-07-17 00:00:00',
+        '5c3128ce-d64e-418a-859c-439e29b4c02d',
+        'Budapest, Hungary',
+        'Discover the historic thermal baths, stunning architecture, and vibrant nightlife in one of Europe\'s most charming capitals.',
+        '2025-05-10 00:00:00',
+        '2025-05-17 00:00:00',
         1199,
-        'https://images.unsplash.com/photo-1529260830199-42c24126f198',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'http://127.0.0.1:4566/il.co.johnbryce.yoavguterman/3f91ada4-6d09-4ac2-8c2d-19e43411e4ab.png',
+        '2025-03-25 20:44:26',
+        '2025-03-25 20:44:26'
     ),
     (
-        '33c7e2c8-3e6e-6157-d6de-40dff92f7g47',
-        'Tokyo, Japan',
-        'Discover the perfect blend of traditional culture and ultramodern living in Japan\'s bustling capital.',
-        '2025-09-05 00:00:00',
-        '2025-09-15 00:00:00',
-        1599,
-        'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '44d8f3d9-4f7f-7268-e7ef-51e0a3h8i58',
-        'Bali, Indonesia',
-        'Relax on beautiful beaches, visit ancient temples, and immerse yourself in Balinese culture.',
-        '2025-08-20 00:00:00',
-        '2025-08-30 00:00:00',
-        1099,
-        'https://images.unsplash.com/photo-1537996194471-e657df975ab4',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '55e9g4e0-5g8g-8379-f8fg-62f1b4i9j69',
-        'New York City, USA',
-        'Experience the city that never sleeps with its iconic skyline, Broadway shows, and diverse neighborhoods.',
-        '2025-04-10 00:00:00',
-        '2025-04-17 00:00:00',
-        1299,
-        'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '66f0h5f1-6h9h-9480-g9gh-73g2c5j0k70',
-        'Barcelona, Spain',
-        'Enjoy beautiful architecture, Mediterranean beaches, and tasty tapas in this vibrant city.',
-        '2025-05-15 00:00:00',
-        '2025-05-22 00:00:00',
-        1099,
-        'https://images.unsplash.com/photo-1539037116277-4db20889f2d4',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '77g1i6g2-7i0i-0591-h0hi-84h3d6k1l81',
-        'Sydney, Australia',
-        'Visit the famous Opera House, beautiful harbors, and enjoy the laid-back Australian lifestyle.',
-        '2025-11-10 00:00:00',
-        '2025-11-20 00:00:00',
-        1799,
-        'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '88h2j7h3-8j1j-1602-i1ij-95i4e7l2m92',
+        'b2c3d4e5-f6a7-4809-b0c1-d2e3f4a5b6c7',
         'Santorini, Greece',
-        'Relax on dramatic volcanic beaches and admire stunning sunsets over white-washed buildings.',
-        '2025-06-25 00:00:00',
-        '2025-07-02 00:00:00',
-        1399,
-        'https://images.unsplash.com/photo-1566478989037-eec170784d0b',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        '99i3k8i4-9k2k-2713-j2jk-06j5f8m3n03',
-        'Cancun, Mexico',
-        'Enjoy pristine beaches, explore ancient Mayan ruins, and experience vibrant nightlife.',
-        '2025-03-15 00:00:00',
-        '2025-03-22 00:00:00',
-        999,
-        'https://images.unsplash.com/photo-1552074283-b2de7daab9ae',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'a1k5m0k6-1m4m-4935-l4lm-28l7h0o5p25',
-        'London, England',
-        'Explore historic landmarks, world-class museums, and charming neighborhoods in this iconic city.',
-        '2025-05-20 00:00:00',
-        '2025-05-27 00:00:00',
-        1299,
-        'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'b2l6n1l7-2n5n-5046-m5mn-39m8i1p6q36',
-        'Machu Picchu, Peru',
-        'Hike to the ancient Incan citadel and enjoy breathtaking mountain views.',
-        '2025-08-10 00:00:00',
-        '2025-08-17 00:00:00',
-        1599,
-        'https://images.unsplash.com/photo-1587595431973-160d0d94901a',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'c3m7o2m8-3o6o-6157-n6no-40n9j2q7r47',
-        'Bangkok, Thailand',
-        'Experience bustling street markets, ornate temples, and delicious Thai cuisine.',
-        '2025-11-15 00:00:00',
-        '2025-11-22 00:00:00',
-        1099,
-        'https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'd4n8p3n9-4p7p-7268-o7op-51o0k3r8s58',
-        'Cairo, Egypt',
-        'Discover ancient pyramids, the Sphinx, and the rich history of Egypt.',
-        '2025-09-20 00:00:00',
-        '2025-09-27 00:00:00',
-        1299,
-        'https://images.unsplash.com/photo-1572252009286-268acec5ca0a',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'e5o9q4o0-5q8q-8379-p8pq-62p1l4s9t69',
-        'Rio de Janeiro, Brazil',
-        'Enjoy beautiful beaches, vibrant culture, and stunning mountain views.',
-        '2025-02-10 00:00:00',
-        '2025-02-17 00:00:00',
-        1399,
-        'https://images.unsplash.com/photo-1483729558449-99ef09a8c325',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'f6p0r5p1-6r9r-9480-q9qr-73q2m5t0u70',
-        'Venice, Italy',
-        'Experience a unique city built on water with romantic canals and historic architecture.',
-        '2025-04-25 00:00:00',
-        '2025-05-02 00:00:00',
-        1299,
-        'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'g7q1s6q2-7s0s-0591-r0rs-84r3n6u1v81',
-        'Prague, Czech Republic',
-        'Explore a fairy-tale city with medieval architecture and charming cobblestone streets.',
+        'Discover the iconic white-washed buildings with blue domes overlooking the Aegean Sea. Enjoy spectacular sunsets, volcanic beaches, and traditional Greek cuisine in this romantic island paradise that captivates visitors from around the world.',
         '2025-06-10 00:00:00',
-        '2025-06-17 00:00:00',
-        1199,
-        'https://images.unsplash.com/photo-1541849546-216549ae216d',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        '2025-06-20 00:00:00',
+        1599,
+        'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        'h8r2t7r3-8t1t-1602-s1st-95s4o7v2w92',
-        'Kyoto, Japan',
-        'Experience traditional Japanese culture with temples, gardens, and geisha districts.',
-        '2025-10-15 00:00:00',
-        '2025-10-22 00:00:00',
+        'b8c9d0e1-f2a3-4a45-b6c7-d8e9f0a1b2c3',
+        'New York City, USA',
+        'Discover the city that never sleeps with iconic landmarks like Times Square, Central Park, and the Statue of Liberty. Experience world-class museums, Broadway shows, diverse cuisine, and unparalleled shopping in this global metropolis.',
+        '2025-12-01 00:00:00',
+        '2025-12-08 00:00:00',
         1499,
-        'https://images.unsplash.com/photo-1528360983277-13d401cdc186',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        'i9s3u8s4-9u2u-2713-t2tu-06t5p8w3x03',
-        'Amsterdam, Netherlands',
-        'Explore picturesque canals, historic buildings, and world-class museums.',
-        '2025-07-25 00:00:00',
-        '2025-08-01 00:00:00',
-        1199,
-        'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'j0t4v9t5-0v3v-3824-u3uv-17u6q9x4y14',
-        'Marrakech, Morocco',
-        'Discover colorful markets, stunning palaces, and rich Moroccan culture.',
-        '2025-03-05 00:00:00',
-        '2025-03-12 00:00:00',
-        1099,
-        'https://images.unsplash.com/photo-1597211684565-dca64d72bdfe',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'k1u5w0u6-1w4w-4935-v4vw-28v7r0y5z25',
-        'Maldives',
-        'Relax in overwater bungalows on pristine white-sand beaches and crystal-clear waters.',
-        '2025-12-10 00:00:00',
-        '2025-12-17 00:00:00',
+        'c5d6e7f8-a9b0-4a12-c3d4-e5f6a7b8c9d0',
+        'Tokyo, Japan',
+        'Experience the perfect blend of ultramodern and traditional in Japan\'s bustling capital. Visit ancient temples, explore futuristic districts like Shibuya and Shinjuku, enjoy world-class shopping, and savor authentic Japanese cuisine in this dynamic metropolis.',
+        '2025-11-10 00:00:00',
+        '2025-11-18 00:00:00',
         1999,
-        'https://images.unsplash.com/photo-1573843981267-be1999ff37cd',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        'l2v6x1v7-2x5x-5046-w5wx-39w8s1z6a36',
-        'Vienna, Austria',
-        'Experience a city rich in music, culture, and elegant architecture.',
-        '2025-12-15 00:00:00',
-        '2025-12-22 00:00:00',
-        1299,
-        'https://images.unsplash.com/photo-1516550893885-985c3844373e',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'c9d0e1f2-a3b4-4a56-c7d8-e9f0a1b2c3d4',
+        'Venice, Italy',
+        'Navigate the romantic canals aboard a traditional gondola and marvel at Renaissance architecture. Visit St. Mark\'s Square, Doge\'s Palace, and cross the Rialto Bridge while exploring this unique city built entirely on water.',
+        '2025-05-20 00:00:00',
+        '2025-05-28 00:00:00',
+        1599,
+        'https://images.unsplash.com/photo-1534113414509-0eec2bfb493f',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        'm3w7y2w8-3y6y-6157-x6xy-40x9t2a7b47',
-        'Cape Town, South Africa',
-        'Enjoy scenic mountain views, beautiful beaches, and exciting wildlife encounters.',
-        '2025-01-20 00:00:00',
-        '2025-01-27 00:00:00',
-        1399,
-        'https://images.unsplash.com/photo-1576485375217-d6a95e37f0ee',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'n4x8z3x9-4z7z-7268-y7yz-51y0u3b8c58',
-        'Seoul, South Korea',
-        'Experience a vibrant mix of modern skyscrapers and traditional temples.',
-        '2025-05-05 00:00:00',
-        '2025-05-12 00:00:00',
-        1399,
-        'https://images.unsplash.com/photo-1585132758711-a116713c4eed',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'o5y9a4y0-5a8a-8379-z8za-62z1v4c9d69',
-        'Buenos Aires, Argentina',
-        'Discover a city with rich cultural heritage, tango music, and delicious cuisine.',
-        '2025-11-25 00:00:00',
-        '2025-12-02 00:00:00',
-        1299,
-        'https://images.unsplash.com/photo-1612294037637-ec328d0e075e',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'p6z0b5z1-6b9b-9480-a9ab-73a2w5d0e70',
-        'Stockholm, Sweden',
-        'Explore a beautiful city spread across 14 islands with stunning architecture.',
+        'd4e5f6a7-b8c9-4a01-d2e3-f4a5b6c7d8e9',
+        'Machu Picchu, Peru',
+        'Trek to the ancient Incan citadel set high in the Andes Mountains. This UNESCO World Heritage site offers breathtaking views and a glimpse into pre-Columbian America with its sophisticated dry-stone architecture and astronomical alignments.',
+        '2025-07-05 00:00:00',
         '2025-07-15 00:00:00',
-        '2025-07-22 00:00:00',
-        1299,
-        'https://images.unsplash.com/photo-1587425419269-869c25f4d212',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        2199,
+        'https://images.unsplash.com/photo-1526392060635-9d6019884377',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        'q7a1c6a2-7c0c-0591-b0bc-84b3x6e1f81',
-        'Queenstown, New Zealand',
-        'Experience adventure activities and breathtaking natural scenery.',
-        '2025-02-15 00:00:00',
-        '2025-02-22 00:00:00',
-        1599,
-        'https://images.unsplash.com/photo-1589308078059-be1415eab4c3',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
-    ),
-    (
-        'r8b2d7b3-8d1d-1602-c1cd-95c4y7f2g92',
-        'Florence, Italy',
-        'Discover the birthplace of the Renaissance with stunning art and architecture.',
-        '2025-09-15 00:00:00',
-        '2025-09-22 00:00:00',
+        'e1f2a3b4-c5d6-4a78-e9f0-a1b2c3d4e5f6',
+        'israel, haderaa123',
+        'Discover the historic thermal baths, stunning architecture, and vibrant nightlife in one of Europe\'s most charming capitals.',
+        '2025-05-10 00:00:00',
+        '2025-05-17 00:00:00',
         1199,
-        'https://images.unsplash.com/photo-1543429776-2782fc8e1acd',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'http://127.0.0.1:4566/il.co.johnbryce.yoavguterman/5094419e-a573-4135-86b0-fe5de75bf539.jpg',
+        '2025-03-17 12:14:48',
+        '2025-03-26 13:47:44'
     ),
     (
-        's9c3e8c4-9e2e-2713-d2de-06d5z8g3h03',
-        'Hong Kong',
-        'Experience a dynamic city with stunning skyscrapers, vibrant markets, and delicious cuisine.',
-        '2025-10-25 00:00:00',
-        '2025-11-01 00:00:00',
+        'f2a3b4c5-d6e7-4a89-f0a1-b2c3d4e5f6a7',
+        'Paris, France',
+        'Experience the romance of the City of Light with iconic landmarks like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Enjoy world-class cuisine, stroll along the Seine River, and explore charming neighborhoods in this cultural capital.',
+        '2025-06-15 00:00:00',
+        '2025-06-23 00:00:00',
         1399,
-        'https://images.unsplash.com/photo-1536599018102-9f6700e1e3805',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'https://images.unsplash.com/photo-1502602898657-3e91760cbb34',
+        '2025-03-17 12:14:48',
+        '2025-03-17 12:14:48'
     ),
     (
-        't0d4f9d5-0f3f-3824-e3ef-17e6a9h4i14',
-        'Reykjavik, Iceland',
-        'Discover dramatic landscapes with geysers, waterfalls, and the Northern Lights.',
-        '2025-08-05 00:00:00',
-        '2025-08-12 00:00:00',
-        1599,
-        'https://images.unsplash.com/photo-1525890330427-b48526fae41b',
-        '2025-03-10 09:04:53',
-        '2025-03-10 09:04:53'
+        'f6a7b8c9-d0e1-4a23-f4a5-b6c7d8e9f0a1',
+        'Barcelona, Spain',
+        'Explore Antoni Gaudí\'s architectural masterpieces including Sagrada Familia and Park Güell. Wander through the Gothic Quarter, enjoy tapas at La Boqueria market, and relax on Mediterranean beaches in this vibrant Catalan city.',
+        '2025-09-10 00:00:00',
+        '2025-09-18 00:00:00',
+        1199,
+        'https://images.unsplash.com/photo-1583422409516-2895a77efded',
+        '2025-03-17 12:14:48',
+        '2025-03-21 19:27:04'
     );
 
 --
