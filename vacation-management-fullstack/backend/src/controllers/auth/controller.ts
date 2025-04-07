@@ -55,7 +55,7 @@ export async function signUp(req: Request<{}, {}, { firstName: string, email: st
         //     status: 409,
         //     message: `username ${username} already exists. please try different username`
         // })
-        if (e.email === 'SequelizeUniqueConstraintError') return next(
+        if (e.name === 'SequelizeUniqueConstraintError') return next(
             new AppError(
                 StatusCodes.CONFLICT,
                 `email ${email} already exists. please choose another email.`

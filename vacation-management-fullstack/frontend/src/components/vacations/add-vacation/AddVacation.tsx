@@ -12,10 +12,12 @@ import { showToast } from '../../common/toast/Toast'
 
 export default function AddVacation(): JSX.Element {
     // Set up form handling with react-hook-form
-    const { register, handleSubmit, reset, formState, getValues } = useForm<VacationDraft>()
+    const { register, handleSubmit, reset, formState, getValues, watch, setValue } = useForm<VacationDraft>()
 
     // State for image preview
     const [previewImageSrc, setPreviewImageSrc] = useState<string>('')
+
+
 
     // State to track submission status
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
@@ -29,6 +31,10 @@ export default function AddVacation(): JSX.Element {
 
     // get today's value so we can use it in the min for the can't select past dates
     const today = new Date().toISOString().split('T')[0];
+
+    // watch start date value
+    const startDate = watch('startDate');
+
 
     // Handle form submission
     async function submit(draft: VacationDraft) {
@@ -140,6 +146,18 @@ export default function AddVacation(): JSX.Element {
                                     return valueAsString >= today || 'Cannot select dates in the past';
                                 }
                             })}
+                            onChange={(e) => {
+                                // Call the original onChange handler
+                                register('startDate').onChange(e);
+
+                                // Get the current end date
+                                const currentEndDate = getValues('endDate');
+
+                                // If there's an end date and it's now invalid, reset it
+                                if (currentEndDate && new Date(currentEndDate) <= new Date(e.target.value)) {
+                                    setValue('endDate', '');
+                                }
+                            }}
                         />
                         {formState.errors.startDate && (
                             <span className='error'>{formState.errors.startDate.message}</span>
@@ -151,6 +169,8 @@ export default function AddVacation(): JSX.Element {
                         <input
                             id="endDate"
                             type="date"
+                            min={startDate?.toString() || today}
+                            disabled={!startDate}
                             {...register('endDate', {
                                 required: {
                                     value: true,

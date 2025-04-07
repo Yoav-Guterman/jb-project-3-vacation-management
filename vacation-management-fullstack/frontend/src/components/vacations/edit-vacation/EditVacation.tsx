@@ -22,10 +22,13 @@ export default function EditVacation(): JSX.Element {
     const { id } = useParams<'id'>()
 
     // Set up form handling with react-hook-form
-    const { register, handleSubmit, formState, reset, getValues } = useForm<VacationDraft>()
+    const { register, handleSubmit, formState, reset, getValues, watch, setValue } = useForm<VacationDraft>()
 
     // Navigation for redirecting after successful submission
     const navigate = useNavigate()
+
+    // watch start date value
+    const startDate = watch('startDate');
 
     // Get vacation from Redux state
     const vacation = useAppSelector(state =>
@@ -167,6 +170,18 @@ export default function EditVacation(): JSX.Element {
                                     message: 'Start date is required'
                                 }
                             })}
+                            onChange={(e) => {
+                                // Call the original onChange handler
+                                register('startDate').onChange(e);
+
+                                // Get the current end date
+                                const currentEndDate = getValues('endDate');
+
+                                // If there's an end date and it's now invalid, reset it
+                                if (currentEndDate && new Date(currentEndDate) <= new Date(e.target.value)) {
+                                    setValue('endDate', '');
+                                }
+                            }}
                         />
                         {formState.errors.startDate && (
                             <span className='error'>{formState.errors.startDate.message}</span>
@@ -178,6 +193,7 @@ export default function EditVacation(): JSX.Element {
                         <input
                             id="endDate"
                             type="date"
+                            min={startDate?.toString()}
                             {...register('endDate', {
                                 required: {
                                     value: true,

@@ -3,7 +3,7 @@ import Joi from "joi";
 export const newVacationValidator = Joi.object({
     destination: Joi.string().min(3).max(50).required(),
     description: Joi.string().min(10).required(),
-    startDate: Joi.date().min('now').required()
+    startDate: Joi.date().min(new Date().setHours(0, 0, 0, 0)).required()
         .messages({
             'date.min': 'Cannot select dates in the past',
             'any.required': 'Start date is required'
@@ -11,7 +11,6 @@ export const newVacationValidator = Joi.object({
     endDate: Joi.date().min(Joi.ref('startDate')).required()
         .messages({
             'date.min': 'End date must be after start date',
-            'any.required': 'End date is required'
         }),
     price: Joi.number().min(0).max(10000).required()
 })
