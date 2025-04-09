@@ -24,7 +24,7 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
     const vacationsService = useService(VacationsService);
     const followService = useService(FollowService);
 
-    // Get user info from our custom hook
+    // Get user info from our Auth
     const { user } = useContext(AuthContext)!
 
     const {
@@ -47,17 +47,40 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
     // Keep track of image loading errors
     const [imageError, setImageError] = useState<boolean>(false);
 
+    // Add this state to track whether confirmation is showing
+    const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
     function editMe() {
         navigate(`/admin/edit-vacation/${id}`);
     }
 
-    async function deleteMe() {
+    function deleteMe() {
+        // Show the confirmation instead of using the browser confirm
+        setShowDeleteConfirm(true);
+    }
+
+    // async function deleteMe() {
+    //     try {
+    //         if (confirm(`Are you sure you want to delete this vacation to ${destination}?`)) {
+    //             await vacationsService.remove(id);
+    //             dispatch(remove({ id }));
+    //             showToast.success(`Vacation to ${destination} deleted`);
+    //         }
+    //     } catch (err: unknown) {
+    //         if (axios.isAxiosError(err)) {
+    //             showToast.error(err.response?.data || 'An error occurred');
+    //         } else {
+    //             showToast.error('An unexpected error occurred');
+    //         }
+    //     }
+    // }
+
+    async function confirmDelete() {
         try {
-            if (confirm(`Are you sure you want to delete this vacation to ${destination}?`)) {
-                await vacationsService.remove(id);
-                dispatch(remove({ id }));
-                showToast.success(`Vacation to ${destination} deleted`);
-            }
+            await vacationsService.remove(id);
+            dispatch(remove({ id }));
+            showToast.success(`Vacation to ${destination} deleted`);
+            setShowDeleteConfirm(false);
         } catch (err: unknown) {
             if (axios.isAxiosError(err)) {
                 showToast.error(err.response?.data || 'An error occurred');
@@ -119,8 +142,9 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
                 </button>
             )}
 
-            {imageUrl && !imageError && (
-                <div className="vacation-image">
+            {/* Image container with potential overlay */}
+            <div className="vacation-image">
+                {imageUrl && !imageError && (
                     <img
                         src={`${import.meta.env.VITE_AWS_SERVER_URL}/${imageUrl}`}
                         alt={destination}
@@ -130,14 +154,33 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
                             setImageError(true);
                         }}
                     />
-                </div>
-            )}
+                )}
 
-            {imageError && (
-                <div className="vacation-image placeholder">
+                {imageError && (
                     <div className="image-placeholder">Image Unavailable</div>
-                </div>
-            )}
+                )}
+
+                {/* Delete confirmation overlay */}
+                {showDeleteConfirm && (
+                    <div className="delete-confirm-overlay">
+                        <p>Are you sure you want to delete this vacation to {destination}?</p>
+                        <div className="confirm-buttons">
+                            <button
+                                onClick={() => setShowDeleteConfirm(false)}
+                                className="cancel-button"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={confirmDelete}
+                                className="confirm-delete-button"
+                            >
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
 
             <div className="vacation-dates">
                 <p>From: {new Date(startDate).toLocaleDateString()}</p>

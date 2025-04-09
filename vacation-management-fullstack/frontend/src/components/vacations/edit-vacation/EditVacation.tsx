@@ -198,11 +198,6 @@ export default function EditVacation(): JSX.Element {
                                 required: {
                                     value: true,
                                     message: 'End date is required'
-                                },
-                                validate: value => {
-                                    const startDate = new Date(getValues().startDate);
-                                    const endDate = new Date(value);
-                                    return endDate > startDate || 'End date must be after start date';
                                 }
                             })}
                         />

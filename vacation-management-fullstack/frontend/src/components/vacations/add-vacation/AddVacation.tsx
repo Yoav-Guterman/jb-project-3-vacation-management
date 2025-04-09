@@ -17,8 +17,6 @@ export default function AddVacation(): JSX.Element {
     // State for image preview
     const [previewImageSrc, setPreviewImageSrc] = useState<string>('')
 
-
-
     // State to track submission status
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
@@ -138,12 +136,6 @@ export default function AddVacation(): JSX.Element {
                                 required: {
                                     value: true,
                                     message: 'start date is required'
-                                },
-                                validate: value => {
-                                    // value is something like "2025-03-20" from the date input
-                                    const valueAsString = new Date(value).toISOString().split('T')[0];
-                                    // This compares "2025-03-20" >= "2025-03-15"
-                                    return valueAsString >= today || 'Cannot select dates in the past';
                                 }
                             })}
                             onChange={(e) => {
