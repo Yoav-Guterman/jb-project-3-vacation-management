@@ -6,7 +6,7 @@ import { sign } from "jsonwebtoken";
 import AppError from "../../errors/app-error";
 import User from "../../models/user";
 
-function hashPassword(password: string): string {
+export function hashPassword(password: string): string {
     return createHmac('sha256', config.get<string>('app.secret'))
         .update(password)
         .digest('hex')
