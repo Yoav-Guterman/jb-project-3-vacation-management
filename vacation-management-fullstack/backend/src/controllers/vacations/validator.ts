@@ -6,7 +6,6 @@ export const newVacationValidator = Joi.object({
     startDate: Joi.date().min(new Date().setHours(0, 0, 0, 0)).required()
         .messages({
             'date.min': 'Cannot select dates in the past',
-            'any.required': 'Start date is required'
         }),
     endDate: Joi.date().min(Joi.ref('startDate')).required()
         .messages({
