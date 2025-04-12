@@ -12,7 +12,7 @@ export async function adminValidator(req: Request, res: Response, next: NextFunc
     next()
 }
 
-export async function userValidator(req: Request, res: Response, next: NextFunction) {
+export async function regularUserValidator(req: Request, res: Response, next: NextFunction) {
     if (req.user.role !== 'user') return next(
         new AppError(
             StatusCodes.FORBIDDEN,
