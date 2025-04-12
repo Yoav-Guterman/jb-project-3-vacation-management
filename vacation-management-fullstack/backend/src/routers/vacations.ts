@@ -6,15 +6,16 @@ import validation from "../middlewares/validation";
 import enforceAuth from "../middlewares/enforce-auth";
 import filesValidation from "../middlewares/files-validation";
 import fileUploader from "../middlewares/file-uploader";
+import { adminValidator } from "../middlewares/role-validation";
 
 const vacationsRouter = Router()
 
 vacationsRouter.use(enforceAuth)
 
 vacationsRouter.get('/', getAllVacations)
-vacationsRouter.post('/', validation(newVacationValidator), filesValidation(newVacationFilesValidator), fileUploader, createVacation)
-vacationsRouter.delete('/:id', paramsValidation(vacationIdValidator), removeVacation)
-vacationsRouter.patch('/:id', paramsValidation(vacationIdValidator), validation(UpdateVacationValidator), filesValidation(updateVacationFilesValidator), fileUploader, updateVacation)
-vacationsRouter.get('/reports/followers', exportFollowersCSV);
+vacationsRouter.post('/', adminValidator, validation(newVacationValidator), filesValidation(newVacationFilesValidator), fileUploader, createVacation)
+vacationsRouter.delete('/:id', adminValidator, paramsValidation(vacationIdValidator), removeVacation)
+vacationsRouter.patch('/:id', adminValidator, paramsValidation(vacationIdValidator), validation(UpdateVacationValidator), filesValidation(updateVacationFilesValidator), fileUploader, updateVacation)
+vacationsRouter.get('/reports/followers', adminValidator, exportFollowersCSV);
 
 export default vacationsRouter 
