@@ -30,6 +30,11 @@ export default function EditVacation(): JSX.Element {
     // watch start date value
     const startDate = watch('startDate');
 
+    // Calculate minimum end date (one day after start date)
+    const minEndDateString = startDate
+        ? new Date(new Date(startDate).setDate(new Date(startDate).getDate() + 1)).toISOString().split('T')[0]
+        : ''; // Empty string as fallback
+
     // Get vacation from Redux state
     const vacation = useAppSelector(state =>
         state.vacations.vacations.find(v => v.id === id)
@@ -41,13 +46,41 @@ export default function EditVacation(): JSX.Element {
     // Get the dispatch function for Redux
     const dispatch = useAppDispatch()
 
-
-
-    // Load vacation data into the form
     useEffect(() => {
-        if (vacation) {
-            // Format dates for the date inputs (YYYY-MM-DD format)
+        // Function to load vacation data from API
+        async function loadVacationFromAPI() {
+            try {
+                if (id) {
+                    // Show loading state if desired
+                    const vacationData = await vacationsService.getVacation(id);
 
+                    // Format and load data into form
+                    reset({
+                        destination: vacationData.destination,
+                        description: vacationData.description,
+                        startDate: new Date(vacationData.startDate).toISOString().split('T')[0],
+                        endDate: new Date(vacationData.endDate).toISOString().split('T')[0],
+                        price: vacationData.price
+                    });
+
+                    // Set image preview
+                    if (vacationData.imageUrl) {
+                        setPreviewImageSrc(vacationData.imageUrl);
+                    }
+                }
+            } catch (err: unknown) {
+                if (axios.isAxiosError(err)) {
+                    showToast.error(err.response?.data || 'Error getting vacation data');
+                    navigate('/vacations')
+                } else {
+                    showToast.error('Failed to receive vacation data. Please try again');
+                    navigate('/vacations')
+                }
+            }
+        }
+
+        // If vacation exists in Redux, use it
+        if (vacation) {
             reset({
                 destination: vacation.destination,
                 description: vacation.description,
@@ -58,14 +91,14 @@ export default function EditVacation(): JSX.Element {
 
             // Set image preview if available
             if (vacation.imageUrl) {
-                setPreviewImageSrc(vacation.imageUrl)
+                setPreviewImageSrc(vacation.imageUrl);
             }
         } else {
-            // No vacation found, redirect back to vacations list
-            showToast.error('Vacation not found')
-            navigate('/vacations')
+            // Otherwise, fetch from API
+            loadVacationFromAPI();
         }
-    }, [vacation, reset, navigate])
+    }, []);
+
 
     // Handle form submission
     async function submit(draft: VacationDraft) {
@@ -193,7 +226,7 @@ export default function EditVacation(): JSX.Element {
                         <input
                             id="endDate"
                             type="date"
-                            min={startDate?.toString()}
+                            min={minEndDateString}
                             {...register('endDate', {
                                 required: {
                                     value: true,

@@ -30,8 +30,13 @@ export default function AddVacation(): JSX.Element {
     // get today's value so we can use it in the min for the can't select past dates
     const today = new Date().toISOString().split('T')[0];
 
-    // watch start date value
+    // Watch start date value
     const startDate = watch('startDate');
+
+    // Calculate minimum end date (one day after start date)
+    const minEndDateString = startDate
+        ? new Date(new Date(startDate).setDate(new Date(startDate).getDate() + 1)).toISOString().split('T')[0]
+        : today;
 
 
     // Handle form submission
@@ -161,7 +166,7 @@ export default function AddVacation(): JSX.Element {
                         <input
                             id="endDate"
                             type="date"
-                            min={startDate?.toString() || today}
+                            min={minEndDateString}
                             disabled={!startDate}
                             {...register('endDate', {
                                 required: {
