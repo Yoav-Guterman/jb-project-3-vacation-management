@@ -7,6 +7,8 @@ import VacationsService from '../../../services/auth-aware/Vacations';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import './VacationsStats.css';
+import { showToast } from '../../common/toast/Toast';
+import axios from 'axios';
 
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -124,9 +126,13 @@ export default function VacationStats() {
             document.body.removeChild(link);
             window.URL.revokeObjectURL(url);
 
-        } catch (error) {
-            console.error('Error exporting CSV:', error);
-            alert('Failed to export data. Please try again.');
+        } catch (err: unknown) {
+            if (axios.isAxiosError(err)) {
+                console.error('Error exporting CSV:', error);
+                showToast.error(err.response?.data || 'Failed to export data. Please try again.');
+            } else {
+                showToast.error('Failed to export data. Please try again.');
+            }
         } finally {
             setIsExporting(false);
         }

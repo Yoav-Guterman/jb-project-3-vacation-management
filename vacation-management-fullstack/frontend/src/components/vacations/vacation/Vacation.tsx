@@ -59,22 +59,6 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
         setShowDeleteConfirm(true);
     }
 
-    // async function deleteMe() {
-    //     try {
-    //         if (confirm(`Are you sure you want to delete this vacation to ${destination}?`)) {
-    //             await vacationsService.remove(id);
-    //             dispatch(remove({ id }));
-    //             showToast.success(`Vacation to ${destination} deleted`);
-    //         }
-    //     } catch (err: unknown) {
-    //         if (axios.isAxiosError(err)) {
-    //             showToast.error(err.response?.data || 'An error occurred');
-    //         } else {
-    //             showToast.error('An unexpected error occurred');
-    //         }
-    //     }
-    // }
-
     async function confirmDelete() {
         try {
             await vacationsService.remove(id);
