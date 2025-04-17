@@ -26,7 +26,7 @@ export async function getVacation(req: Request<{ id: string }>, res: Response, n
             include: [User], // Just include User model
         });
 
-        if (!vacation) return next(new AppError(StatusCodes.NOT_FOUND, 'the vacation you were trying to update does not exist'))
+        if (!vacation) return next(new AppError(StatusCodes.NOT_FOUND, 'the vacation you were trying to get does not exist'))
 
         res.json(vacation);
     } catch (e) {

@@ -83,6 +83,12 @@ VALUES
         '2025-03-17 12:14:48'
     ),
     (
+        'a4b72e8f-2b9c-4d1e-a5f7-8e9b3c1d7a6b',
+        'a1b2c3d4-e5f6-4a78-b9c0-d1e2f3a4b5c6',
+        '2025-03-28 13:46:00',
+        '2025-03-28 13:46:00'
+    ),
+    (
         'b5c83f91-3c0d-4e2f-b6a8-9f0d4e2c1b3a',
         'b2c3d4e5-f6a7-4809-b0c1-d2e3f4a5b6c7',
         '2025-03-17 12:14:48',
@@ -93,6 +99,24 @@ VALUES
         'f6a7b8c9-d0e1-4a23-f4a5-b6c7d8e9f0a1',
         '2025-03-17 12:14:48',
         '2025-03-17 12:14:48'
+    ),
+    (
+        'b5c83f91-3c0d-4e2f-b6a8-9f0d4e2c1b3a',
+        'b9c8d7e6-f5a4-4b32-c1d0-e9f8a7b6c5d4',
+        '2025-03-28 13:47:00',
+        '2025-03-28 13:47:00'
+    ),
+    (
+        'd7e05a12-5e2f-4a4b-d8c0-1b2f6a4e3d5c',
+        'b9c8d7e6-f5a4-4b32-c1d0-e9f8a7b6c5d4',
+        '2025-03-28 13:48:00',
+        '2025-03-28 13:48:00'
+    ),
+    (
+        'e8f16b23-6f3a-485c-e9d1-2c3a7b5f4e6d',
+        'b9c8d7e6-f5a4-4b32-c1d0-e9f8a7b6c5d4',
+        '2025-03-28 13:49:00',
+        '2025-03-28 13:49:00'
     ),
     (
         'c016829d-a157-4602-a018-c5bd3d3fa8e6',
@@ -113,10 +137,22 @@ VALUES
         '2025-03-27 08:24:53'
     ),
     (
+        'c016829d-a157-4602-a018-c5bd3d3fa8e6',
+        'a1b2c3d4-e5f6-4a78-b9c0-d1e2f3a4b5c6',
+        '2025-03-28 13:45:00',
+        '2025-03-28 13:45:00'
+    ),
+    (
         'c6d94f01-4d1e-4f3a-c7b9-0a1e5f3d2c4b',
         'b2c3d4e5-f6a7-4809-b0c1-d2e3f4a5b6c7',
         '2025-03-17 12:14:48',
         '2025-03-17 12:14:48'
+    ),
+    (
+        'c6d94f01-4d1e-4f3a-c7b9-0a1e5f3d2c4b',
+        'd7c6b5a4-e3f2-4d19-87f7-16a5b4c3d2e1',
+        '2025-03-28 13:50:00',
+        '2025-03-28 13:50:00'
     ),
     (
         'c6d94f01-4d1e-4f3a-c7b9-0a1e5f3d2c4b',
@@ -391,11 +427,11 @@ VALUES
     (
         '5c3128ce-d64e-418a-859c-439e29b4c02d',
         'Budapest, Hungary',
-        'Discover the historic thermal baths, stunning architecture, and vibrant nightlife in one of Europe\'s most charming capitals.',
+        'Discover the historic thermal baths, stunning architecture, and vibrant nightlife in one of Europes most charming capitals.',
         '2025-05-10 00:00:00',
         '2025-05-17 00:00:00',
         1199,
-        'http://127.0.0.1:4566/il.co.johnbryce.yoavguterman/3f91ada4-6d09-4ac2-8c2d-19e43411e4ab.png',
+        'il.co.johnbryce.yoavguterman/budapest.webp',
         '2025-03-25 20:44:26',
         '2025-03-25 20:44:26'
     ),
@@ -406,7 +442,7 @@ VALUES
         '2025-06-10 00:00:00',
         '2025-06-20 00:00:00',
         1599,
-        'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff',
+        'il.co.johnbryce.yoavguterman/santorini.jpeg',
         '2025-03-17 12:14:48',
         '2025-03-17 12:14:48'
     ),
@@ -417,18 +453,18 @@ VALUES
         '2025-12-01 00:00:00',
         '2025-12-08 00:00:00',
         1499,
-        'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9',
+        'il.co.johnbryce.yoavguterman/New-York-City.jpg',
         '2025-03-17 12:14:48',
         '2025-03-17 12:14:48'
     ),
     (
         'c5d6e7f8-a9b0-4a12-c3d4-e5f6a7b8c9d0',
         'Tokyo, Japan',
-        'Experience the perfect blend of ultramodern and traditional in Japan\'s bustling capital. Visit ancient temples, explore futuristic districts like Shibuya and Shinjuku, enjoy world-class shopping, and savor authentic Japanese cuisine in this dynamic metropolis.',
+        'Experience the perfect blend of ultramodern and traditional in Japan\s bustling capital. Visit ancient temples, explore futuristic districts like Shibuya and Shinjuku, enjoy world-class shopping, and savor authentic Japanese cuisine in this dynamic metropolis.',
         '2025-11-10 00:00:00',
         '2025-11-18 00:00:00',
         1999,
-        'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf',
+        'il.co.johnbryce.yoavguterman/tokyo.webp',
         '2025-03-17 12:14:48',
         '2025-03-17 12:14:48'
     ),
@@ -439,7 +475,7 @@ VALUES
         '2025-05-20 00:00:00',
         '2025-05-28 00:00:00',
         1599,
-        'https://images.unsplash.com/photo-1534113414509-0eec2bfb493f',
+        'il.co.johnbryce.yoavguterman/Venice.jpg',
         '2025-03-17 12:14:48',
         '2025-03-17 12:14:48'
     ),
@@ -450,18 +486,18 @@ VALUES
         '2025-07-05 00:00:00',
         '2025-07-15 00:00:00',
         2199,
-        'https://images.unsplash.com/photo-1526392060635-9d6019884377',
+        'il.co.johnbryce.yoavguterman/machu-picchu.jpg',
         '2025-03-17 12:14:48',
         '2025-03-17 12:14:48'
     ),
     (
         'e1f2a3b4-c5d6-4a78-e9f0-a1b2c3d4e5f6',
-        'israel, haderaa123',
-        'Discover the historic thermal baths, stunning architecture, and vibrant nightlife in one of Europe\'s most charming capitals.',
+        'Hadera, Israel',
+        'Discover the historic thermal baths, stunning architecture, and vibrant nightlife in one of Europe\s most charming capitals.',
         '2025-05-10 00:00:00',
         '2025-05-17 00:00:00',
         1199,
-        'http://127.0.0.1:4566/il.co.johnbryce.yoavguterman/5094419e-a573-4135-86b0-fe5de75bf539.jpg',
+        'il.co.johnbryce.yoavguterman/hadera.jpg',
         '2025-03-17 12:14:48',
         '2025-03-26 13:47:44'
     ),
@@ -472,20 +508,53 @@ VALUES
         '2025-06-15 00:00:00',
         '2025-06-23 00:00:00',
         1399,
-        'https://images.unsplash.com/photo-1502602898657-3e91760cbb34',
+        'il.co.johnbryce.yoavguterman/paris.jpg',
         '2025-03-17 12:14:48',
         '2025-03-17 12:14:48'
     ),
     (
         'f6a7b8c9-d0e1-4a23-f4a5-b6c7d8e9f0a1',
         'Barcelona, Spain',
-        'Explore Antoni Gaudí\'s architectural masterpieces including Sagrada Familia and Park Güell. Wander through the Gothic Quarter, enjoy tapas at La Boqueria market, and relax on Mediterranean beaches in this vibrant Catalan city.',
+        'Explore Antoni Gaudí\s architectural masterpieces including Sagrada Familia and Park Güell. Wander through the Gothic Quarter, enjoy tapas at La Boqueria market, and relax on Mediterranean beaches in this vibrant Catalan city.',
         '2025-09-10 00:00:00',
         '2025-09-18 00:00:00',
         1199,
-        'https://images.unsplash.com/photo-1583422409516-2895a77efded',
+        'il.co.johnbryce.yoavguterman/Barcelona.jpg',
         '2025-03-17 12:14:48',
         '2025-03-21 19:27:04'
+    ),
+    (
+        'a1b2c3d4-e5f6-4a78-b9c0-d1e2f3a4b5c6',
+        'Kyoto, Japan',
+        'Experience traditional Japan in its ancient capital. Visit historic temples and shrines, stroll through bamboo forests, and witness the beauty of cherry blossoms. Enjoy authentic tea ceremonies, traditional ryokan accommodations, and exquisite Japanese cuisine.',
+        '2025-08-15 00:00:00',
+        '2025-08-23 00:00:00',
+        1799,
+        'il.co.johnbryce.yoavguterman/kyoto.jpg',
+        '2025-03-28 13:30:00',
+        '2025-03-28 13:30:00'
+    ),
+    (
+        'b9c8d7e6-f5a4-4b32-c1d0-e9f8a7b6c5d4',
+        'Bali, Indonesia',
+        'Relax on pristine beaches, explore ancient temples, and immerse yourself in Balinese culture. Discover lush rice terraces, vibrant coral reefs, and the warm hospitality of locals in this tropical paradise perfect for both adventure and relaxation.',
+        '2025-07-20 00:00:00',
+        '2025-07-30 00:00:00',
+        1499,
+        'il.co.johnbryce.yoavguterman/bali.webp',
+        '2025-03-28 13:35:00',
+        '2025-03-28 13:35:00'
+    ),
+    (
+        'd7c6b5a4-e3f2-4d19-87f7-16a5b4c3d2e1',
+        'Marrakech, Morocco',
+        'Wander through the vibrant souks, explore intricate palaces, and experience the lively atmosphere of Djemaa el-Fna square. Discover the rich history, stunning architecture, and exotic flavors in this colorful North African gem.',
+        '2025-10-05 00:00:00',
+        '2025-10-12 00:00:00',
+        1299,
+        'il.co.johnbryce.yoavguterman/marrakech.jpg',
+        '2025-03-28 13:40:00',
+        '2025-03-28 13:40:00'
     );
 
 --
