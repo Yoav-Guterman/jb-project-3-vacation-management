@@ -2,7 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 import VacationModel from '../../../models/vacation/Vacation';
 import './Vacation.css';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useAppDispatch } from '../../../redux/hooks';
 import useService from '../../../hooks/useService';
 import VacationsService from '../../../services/auth-aware/Vacations';
@@ -37,10 +37,6 @@ export default function Vacation({ vacation, isAdmin }: VacationProps) {
         imageUrl,
         followers = [] // Ensure we have a followers array
     } = vacation;
-
-    useEffect(() => {
-        console.log(vacation)
-    })
 
     // Check if current user is following this vacation
     const isFollowing = user ? followers.some(follower => follower.id === user.id) : false;

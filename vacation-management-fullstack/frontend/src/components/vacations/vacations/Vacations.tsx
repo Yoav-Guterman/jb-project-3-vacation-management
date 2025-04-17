@@ -8,6 +8,7 @@ import { AuthContext } from '../../auth/auth/Auth'
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
 import { init, setCurrentPage } from '../../../redux/vacationsSlice'
 import { useContext } from 'react'
+import LoadingButton from '../../common/loadingButton/LoadingButton'
 
 // Define filter types as an enum for type safety
 enum FilterType {
@@ -19,7 +20,6 @@ enum FilterType {
 
 export default function Vacations() {
     // State for loading and errors
-    const [isLoading, setIsLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
     // Add filter state
@@ -27,7 +27,7 @@ export default function Vacations() {
 
     // Get services and state from Redux
     const vacationService = useService(VacationsService)
-    const { vacations, currentPage, itemsPerPage } = useAppSelector(state => state.vacations)
+    const { vacations, currentPage, itemsPerPage, isLoading } = useAppSelector(state => state.vacations)
     const dispatch = useAppDispatch()
 
     // Get user info
@@ -60,21 +60,16 @@ export default function Vacations() {
 
     // Load vacations
     useEffect(() => {
-        async function loadVacations() {
+        (async () => {
             try {
-                if (vacations.length === 0) {
-                    const allVacations = await vacationService.getAllVacations()
-                    dispatch(init(allVacations))
-                }
+                const allVacations = await vacationService.getAllVacations()
+                dispatch(init(allVacations))
+
             } catch (e) {
                 console.error('Error fetching vacations:', e)
                 setError('Failed to load vacations. Please try again later.')
-            } finally {
-                setIsLoading(false)
             }
-        }
-
-        loadVacations()
+        })()
     }, [])
 
     // When filter changes, reset to first page
@@ -165,7 +160,7 @@ export default function Vacations() {
             <div className="vacations-content">
                 {isLoading ? (
                     <div className="loading-container">
-                        <p>Loading vacations...</p>
+                        <LoadingButton message="Loading vacations" />
                     </div>
                 ) : error ? (
                     <div className="error-container">

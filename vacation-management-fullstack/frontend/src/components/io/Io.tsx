@@ -29,12 +29,6 @@ export default function Io(props: PropsWithChildren): JSX.Element {
         const socket = io(import.meta.env.VITE_IO_SERVER_URL)
 
         socket.onAny((eventName, payload) => {
-            // should we even respond?
-            // in other words:
-            // if this event was initiate by "us"
-            // then we should ignore it
-
-            console.log(eventName, payload)
 
             if (payload.from !== xClientId) {
                 switch (eventName) {

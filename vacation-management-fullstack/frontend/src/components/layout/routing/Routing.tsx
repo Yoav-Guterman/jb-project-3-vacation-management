@@ -9,6 +9,7 @@ import AddVacation from '../../vacations/add-vacation/AddVacation';
 import EditVacation from '../../vacations/edit-vacation/EditVacation';
 import NotFound from '../not-found/NotFound';
 import VacationStats from '../../vacations/vacations-stats/VacationsStats';
+import LoadingButton from '../../common/loadingButton/LoadingButton';
 
 export default function Routing() {
     const { isLoading, user } = useContext(AuthContext)!;
@@ -18,7 +19,7 @@ export default function Routing() {
     if (isLoading) {
         return (
             <div className="loading-container">
-                <p>Loading...</p>
+                <LoadingButton message="Loading data" />
             </div>
         );
     }

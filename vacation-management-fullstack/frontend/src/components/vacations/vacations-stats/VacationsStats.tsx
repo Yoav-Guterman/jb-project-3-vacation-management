@@ -29,7 +29,7 @@ export default function VacationStats() {
 
     // Fetch vacation data if needed
     useEffect(() => {
-        async function loadData() {
+        (async () => {
             // Only fetch if vacations array is empty
             if (vacations.length === 0) {
                 try {
@@ -46,9 +46,7 @@ export default function VacationStats() {
                 // If we already have data, just update loading state
                 setIsLoading(false);
             }
-        }
-
-        loadData();
+        })()
     }, []);
 
     const sortedVacations = [...vacations].sort((a, b) =>

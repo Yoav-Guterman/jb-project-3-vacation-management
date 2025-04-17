@@ -7,6 +7,7 @@ import { AuthContext } from '../auth/Auth'
 import Signup from '../../../models/user/Signup'
 import axios from 'axios'
 import { showToast } from '../../common/toast/Toast'
+import LoadingButton from '../../common/loadingButton/LoadingButton'
 
 export default function SignUp(): JSX.Element {
     // Use formState to access errors
@@ -97,9 +98,15 @@ export default function SignUp(): JSX.Element {
                         {errors.password && <span className="error">{errors.password.message}</span>}
                     </div>
 
-                    <button disabled={isLoading}>
-                        {isLoading ? 'Signing up...' : 'Sign Up'}
-                    </button>
+                    {isLoading ?
+                        <LoadingButton message={'Signing up...'} /> :
+                        <button
+                            type="submit"
+                        >
+                            Sign Up
+                        </button>
+                    }
+
                 </form>
                 <h6>Already have an account? Log in here</h6>
                 <button

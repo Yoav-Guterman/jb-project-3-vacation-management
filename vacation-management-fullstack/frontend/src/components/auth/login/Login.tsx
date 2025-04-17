@@ -7,6 +7,7 @@ import LoginModel from '../../../models/user/Login'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { showToast } from '../../common/toast/Toast'
+import LoadingButton from '../../common/loadingButton/LoadingButton'
 
 export default function Login(): JSX.Element {
 
@@ -69,9 +70,14 @@ export default function Login(): JSX.Element {
                     {errors.password && <span className="error">{errors.password.message}</span>}
                 </div>
 
-                <button disabled={isLoading}>
-                    {isLoading ? 'Logging in...' : 'Login'}
-                </button>
+                {isLoading ?
+                    <LoadingButton message={'Logging in...'} /> :
+                    <button
+                        type="submit"
+                    >
+                        Login
+                    </button>
+                }
             </form>
 
             <h6>Don't have an account? sign in here</h6>
