@@ -1,0 +1,153 @@
+/* SignUp page styles */
+.SignUp {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../../assets/images/vacation-background-picture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Auth wrapper styles nested inside SignUp */
+.SignUp .auth-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.SignUp .auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.SignUp .auth-title {
+    color: #1976D2;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.SignUp .auth-description {
+    color: #546E7A;
+    font-size: 16px;
+    max-width: 600px;
+    margin: 20px auto 5px;
+    line-height: 1.5;
+}
+
+.SignUp .auth-content {
+    flex: 1;
+}
+
+.SignUp .auth-footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    background-color: #3d3d3d;
+    color: #ffffff;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Form container styles */
+.SignUp .form-container {
+    max-width: 400px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.SignUp h3.form-title {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.SignUp form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.SignUp input {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.SignUp button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.SignUp button:hover {
+    background-color: var(--primary-hover);
+}
+
+.SignUp h6 {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: normal;
+    color: #6c757d;
+}
+
+.SignUp .btn-link {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-size: 16px;
+    text-decoration: underline;
+    margin: 0 auto;
+    display: block;
+    padding: 8px 16px;
+}
+
+.SignUp .btn-link:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Form group styles */
+.SignUp .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.SignUp .error {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .SignUp .form-container {
+        margin: 0 auto;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .SignUp .auth-title {
+        font-size: 24px;
+    }
+
+    .SignUp .auth-description {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
