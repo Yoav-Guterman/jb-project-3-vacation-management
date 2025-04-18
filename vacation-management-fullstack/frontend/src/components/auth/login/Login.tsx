@@ -13,7 +13,6 @@ export default function Login(): JSX.Element {
 
     const { register, handleSubmit, formState: { errors } } = useForm<LoginModel>()
     const navigate = useNavigate()
-    // Add loading state
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const { newLogin } = useContext(AuthContext)!

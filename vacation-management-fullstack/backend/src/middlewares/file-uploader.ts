@@ -32,7 +32,6 @@ export default async function fileUploader(req: Request, res: Response, next: Ne
 
     const response = await upload.done()
 
-    // req.imageUrl = response.Location
     req.imageUrl = `${response.Bucket}/${response.Key}`
 
     next()

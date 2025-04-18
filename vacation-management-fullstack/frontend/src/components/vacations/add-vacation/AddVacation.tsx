@@ -82,8 +82,8 @@ export default function AddVacation(): JSX.Element {
 
     return (
         <div className='AddVacation'>
-            <h2>Add Vacation</h2>
-            <form onSubmit={handleSubmit(submit)}>
+            <form className='form' onSubmit={handleSubmit(submit)}>
+                <h2>Add Vacation</h2>
                 <div className="form-group">
                     <label htmlFor="destination">Destination</label>
                     <input

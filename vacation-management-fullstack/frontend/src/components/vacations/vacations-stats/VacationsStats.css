@@ -1,12 +1,12 @@
 /* src/components/stats/VacationsStats.css */
 
 /* Main container styling */
-.VacationsStats {
+.VacationStats {
     padding: 30px;
     background-color: white;
     border-radius: 8px;
     box-shadow: var(--card-shadow, 0 2px 8px rgba(0, 0, 0, 0.1));
-    margin: 20px 0;
+    margin: 20px;
 }
 
 /* Header section */

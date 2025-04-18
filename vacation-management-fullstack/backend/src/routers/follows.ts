@@ -11,6 +11,5 @@ followsRouter.use(enforceAuth)
 
 followsRouter.post('/follow/:vacationId', regularUserValidator, paramsValidation(followsVacationIdValidator), followVacation)
 followsRouter.delete('/unfollow/:vacationId', regularUserValidator, paramsValidation(followsVacationIdValidator), unfollowVacation)
-// might need to add all vacation follows into csv file
 
 export default followsRouter

@@ -3,10 +3,7 @@ import { vacationsSlice } from "./vacationsSlice";
 
 const store = configureStore({
     reducer: { // slice list
-        // following: followingSlice.reducer, // single slice
-        // followers: followersSlice.reducer,
         vacations: vacationsSlice.reducer,
-        // feed: feedSlice.reducer
     }
 
 })

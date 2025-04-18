@@ -14,7 +14,6 @@ export default function SignUp(): JSX.Element {
     const { register, handleSubmit, formState: { errors } } = useForm<Signup>()
     const navigate = useNavigate()
     const { newLogin } = useContext(AuthContext)!
-    // Add loading state
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     async function submit(signUp: Signup) {

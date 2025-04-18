@@ -10,7 +10,6 @@
     background-attachment: fixed;
 }
 
-/* Auth wrapper styles nested inside SignUp */
 .SignUp .auth-wrapper {
     display: flex;
     flex-direction: column;

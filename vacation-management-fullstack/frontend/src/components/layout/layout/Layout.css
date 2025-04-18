@@ -11,10 +11,6 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-main {
-    padding: 30px 20px;
-}
-
 footer {
     background-color: #f8f9fa;
     padding: 15px;

@@ -151,15 +151,13 @@ export default function EditVacation(): JSX.Element {
 
     return (
         <div className='EditVacation'>
-            <h2>Edit Vacation</h2>
-
             {isLoadingData ? (
                 <div className="loading-container">
                     <LoadingButton message="Loading vacation data" />
                 </div>
             ) : (
-
-                <form onSubmit={handleSubmit(submit)}>
+                <form className='form' onSubmit={handleSubmit(submit)}>
+                    <h2>Edit Vacation</h2>
                     <div className="form-group">
                         <label htmlFor="destination">Destination</label>
                         <input

@@ -1,8 +1,18 @@
 .EditVacation {
+    height: 100%;
+    padding: 10px;
+    background-image: url('../../../assets/images/vacation-background-picture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.EditVacation .form {
     max-width: 600px;
     margin: 30px auto;
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: var(--card-shadow);
 }
@@ -15,14 +25,13 @@
 }
 
 .EditVacation .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .EditVacation .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color: #666;
 }
 
 .EditVacation .form-group input,
