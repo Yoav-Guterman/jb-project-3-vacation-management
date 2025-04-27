@@ -1,0 +1,16 @@
+  /* NotFound Page */
+  .NotFound {
+    height: 100vh;
+    background-image: url('../../../assets/images/vacation-background-picture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .NotFound .title {
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(90, 90, 90);
+    background-color: rgb(221, 221, 221);
+  }

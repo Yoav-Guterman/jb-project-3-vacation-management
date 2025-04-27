@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  database:
+    container_name: vacation-management-compose-database
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - MYSQL_DATABASE=vacation_management
+      - MYSQL_TCP_PORT=3306
+    ports:
+      - 3306:3306
+    build: ./database
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "127.0.0.1" ]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 60s
+
+  backend:
+    container_name: vacation-management-compose-backend
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=compose
+    build: ./backend
+    depends_on:
+      database:
+        condition: service_healthy
+
+  frontend:
+    container_name: vacation-management-compose-frontend
+    ports:
+      - 5173:80
+    build: ./frontend
+
+  io:
+    container_name: vacation-management-io
+    ports:
+      - 3003:3003
+    build: ./io
+
+  localstack:
+    container_name: localstack
+    ports:
+      - 127.0.0.1:4566:4566
+      - 127.0.0.1:4510-4559:4510-4559
+    image: localstack/localstack
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+    volumes:
+      - "./localstack/init:/etc/localstack/init"
+      - "./localstack/images:/tmp/localstack-images"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    entrypoint: [ "/bin/sh", "-c", "chmod +x /etc/localstack/init/ready.d/init-aws.sh && exec docker-entrypoint.sh" ]
