@@ -4,5 +4,3 @@ export default interface Signup extends Login {
     firstName: string,
     lastName: string
 }
-
-// working
